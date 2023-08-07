@@ -4,19 +4,21 @@ const Navbar = () => {
     return ( 
         <header>
             <div className="logo">
-                <h1>Logo</h1>
+                <p>logo</p>
             </div>
-            <ul>
-                <li>
-                    <Link>Search</Link>
-                </li>
-                <li>
-                    <Link>Projects</Link>
-                </li>
-                <li>
-                    <Link>About Me</Link>
-                </li>
-            </ul>
+            <nav>
+                <ul>
+                    <li>
+                        <Link>Search</Link>
+                    </li>
+                    <li>
+                        <Link>Projects</Link>
+                    </li>
+                    <li>
+                        <Link>About Me</Link>
+                    </li>
+                </ul>
+            </nav>
         </header>
      );
 }
