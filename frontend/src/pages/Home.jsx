@@ -1,6 +1,8 @@
+import Carousel from "../components/Carousel"
+import "../styles/home.css"
 const Home = () => {
     return ( 
-        <h1>home</h1>
+        <Carousel/>
      );
 }
  
