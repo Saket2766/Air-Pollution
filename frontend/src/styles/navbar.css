@@ -1,16 +1,26 @@
 header{
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     justify-content: space-between;
     background-color: #FFFFFF;
     color: black;
-    padding: 10px;
+    padding: 0px 20px;
+    height: 7vh;
+    z-index: 100;
+}
+
+nav{
+    width: 30%;
 }
 
 ul{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
+    width: 100%;
     list-style: none;
     margin: auto,0;
     padding: 0;
