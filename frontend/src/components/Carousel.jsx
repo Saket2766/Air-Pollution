@@ -1,15 +1,12 @@
 import { useState } from "react";
 
-const Carousel = () => {
+const Carousel = ({slides}) => {
 
     const [slideIndex,setSlideIndex] = useState(1);
 
     return ( 
-        <div className="carousel">
-            <div className="slide">
-                <img src="Slide1.png" width={"100%"}/>
-                <h1 className="slide-title">Air Pollution</h1>
-            </div>
+        <div className="carousel" style={{backgroundImage : `url(${slides[slideIndex-1].url})`}}>
+            <h1 className="slide-title">{slides[slideIndex-1].title}</h1>
         </div>
      );
 }
