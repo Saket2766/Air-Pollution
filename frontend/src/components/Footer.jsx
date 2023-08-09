@@ -1,8 +1,9 @@
-import Yt from "../Images/Yt";
-import FB from "../Images/FB";
-import Insta from "../Images/Insta";
-import Twitter from "../Images/Twitter";
-import LinkedIn from "../Images/LinkedIn";
+import Yt from "../Images/Yt.jpeg";
+import FB from "../Images/FB.png";
+import Insta from "../Images/Insta.png";
+import Twitter from "../Images/Twitter.png";
+import LinkedIn from "../Images/LinkedIn.png";
+import "../styles/Footer.css";
 
 const Footer = () => {
   return (

@@ -1,0 +1,27 @@
+.Pollution {
+  width: 25vw;
+  margin: 5px 40px;
+  color: black;
+}
+.ProjectInfo {
+  color: black;
+}
+.Pollution img {
+  height: 40vh;
+  width: 25vw;
+}
+.ProjectInfo h1 {
+  text-align: center;
+  font-size: 4rem;
+}
+.ProjectInfo h2 {
+  font-size: 2.3rem;
+}
+
+.PollutionTypes {
+  display: flex;
+  flex-direction: row;
+  height: min-content;
+  justify-content: center;
+  justify-content: space-between;
+}

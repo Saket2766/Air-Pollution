@@ -1,0 +1,17 @@
+.logos img {
+  width: 5vw;
+  height: 5vh;
+}
+footer {
+  background-color: green;
+  color: black;
+  display: flex;
+}
+footer h3 {
+  margin-left: 10vh;
+}
+footer .logos {
+  position: absolute;
+  transform: translateX(290%);
+  margin: 10px 20px;
+}
