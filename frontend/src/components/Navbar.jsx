@@ -9,7 +9,7 @@ const Navbar = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link>Search</Link>
+                        <Link>Search <img src="/search_icon.svg" alt="search icon" /></Link>
                     </li>
                     <li>
                         <Link>Projects</Link>
