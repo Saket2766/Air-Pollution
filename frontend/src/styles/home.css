@@ -8,10 +8,36 @@
     background-size: cover;
 }
 
+.arrow{
+    font-size: 47px;
+    color: #99CC02;
+    cursor: pointer;
+}
+
+.title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .slide-title{
     font-size: 120px;
     font-weight: 900;
     line-height: 140px;
+}
+
+.title-button{
+    background-color: #99CC02;
+    color: #FFFFFF;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 27.6px;
+    letter-spacing: -3%;
+    padding: 14px 31px;
+    outline: 0;
+    border: none;
+    border-radius: 6px;
 }
 
 .about{
