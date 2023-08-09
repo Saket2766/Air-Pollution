@@ -22,12 +22,12 @@ const Carousel = ({slides}) => {
 
     return ( 
         <div className="carousel" style={{backgroundImage : `url(${slides[slideIndex].url})`}}>
-            <div className="arrow" onClick={nextSlide}>&larr;</div>
+            <div className="arrow" onClick={prevSlide}>&larr;</div>
             <div className="title-container"> 
                 <h1 className="slide-title">{slides[slideIndex].title}</h1>
                 <button className="title-button">LEARN MORE</button>
             </div>
-            <div className="arrow" onClick={prevSlide}>&rarr;</div>
+            <div className="arrow" onClick={nextSlide}>&rarr;</div>
         </div>
      );
 }
