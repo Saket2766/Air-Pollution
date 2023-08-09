@@ -1,19 +1,20 @@
 /* eslint-disable react/prop-types */
 import PropTypes from "prop-types";
+import  "../styles/Pollution.css";
 
-const Pollution = (props) => {
+const PollutionType = (props) => {
   return (
-    <div>
-      <h3>{props.title}</h3>
+    <div className="Pollution">
+      <h2>{props.title}</h2>
       <p>{props.Description}</p>
       <img src={props.Img} alt={props.title}></img>
     </div>
   );
 };
 
-Pollution.PropTypes = {
+PollutionType.propTypes = {
   title: PropTypes.string.isRequired,
   Description: PropTypes.string.isRequired,
   Img: PropTypes.string.isRequired,
 };
-export default Pollution;
+export default PollutionType;

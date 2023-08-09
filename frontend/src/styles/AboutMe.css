@@ -1,0 +1,21 @@
+.AboutMe {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10vh;
+  color: black;
+  width: 75vw;
+}
+
+.AboutMe h1 {
+  font-size: 4rem;
+}
+.AboutMe p {
+  font-size: 1.3rem;
+}
+.AboutMe img {
+  border-radius: 25px;
+  margin: 10px 50px;
+}
+.AboutMe a{
+    color: blue;
+}
