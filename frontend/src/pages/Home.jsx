@@ -5,7 +5,7 @@ const Home = () => {
     const slides = [
         {url:"/Slide1.png" ,title: "Air Pollution"},
         {url:"/Slide1.png" ,title: "Water Pollution"},
-        {url:"/Slide1.png" ,title: "Land Pollution"}
+        {url:"/Slide1.png" ,title: "Noise Pollution"}
     ]
 
     return (

@@ -38,6 +38,13 @@
     outline: 0;
     border: none;
     border-radius: 6px;
+    cursor: pointer;
+    transition: 0.1s ease;
+}
+
+.title-button:hover{
+    background-color: #FFFFFF;
+    color: #99CC02;
 }
 
 .about{
