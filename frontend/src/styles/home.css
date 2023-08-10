@@ -14,6 +14,25 @@
     cursor: pointer;
 }
 
+.dot-container{
+    display: flex;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translate(-50%,0);
+}
+
+.dot{
+    font-size: 21px;
+    color: #999999;
+    cursor: pointer;
+}
+
+.active{
+    font-size: 28px;
+    color: #99CC02;
+}
+
 .title-container{
     display: flex;
     flex-direction: column;

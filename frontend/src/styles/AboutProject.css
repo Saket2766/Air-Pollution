@@ -45,3 +45,8 @@
     line-height: 15px;
     cursor: pointer;
 }
+
+.glass button:hover{
+    background-color: white;
+    color: #99CC02;
+}
