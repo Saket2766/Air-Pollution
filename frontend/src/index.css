@@ -21,3 +21,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
+.chart {
+  height: 500px;
+  width: 500px;
+}

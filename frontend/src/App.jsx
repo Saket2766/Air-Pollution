@@ -2,13 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
-import ChartDropdown from "./components/ChartDropdown";
-
-const Options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' }
-]
+import DropDownMenu from "./components/DropDownMenu";
 
 function App() {
   return (
@@ -20,9 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
         </Routes>
         <Footer />
-        <ChartDropdown Options={Options}/>
-        <ChartDropdown Options={Options}/>
-        <ChartDropdown Options={Options}/>
+        <DropDownMenu />
       </BrowserRouter>
     </div>
   );
