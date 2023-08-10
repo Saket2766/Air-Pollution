@@ -1,4 +1,6 @@
 import Carousel from "../components/Carousel"
+import AboutMe from "../components/AboutMe";
+import ProjectInfo from "../components/ProjectInfo";
 import "../styles/home.css"
 const Home = () => {
 
@@ -14,6 +16,8 @@ const Home = () => {
             <div className="about">
                 
             </div>
+            <ProjectInfo />
+            <AboutMe />
         </> 
      );
 }
