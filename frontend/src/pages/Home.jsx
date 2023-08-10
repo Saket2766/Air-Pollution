@@ -2,6 +2,7 @@ import Carousel from "../components/Carousel"
 import AboutMe from "../components/AboutMe";
 import ProjectInfo from "../components/ProjectInfo";
 import "../styles/home.css"
+import AboutProject from "../components/AboutProject";
 const Home = () => {
 
     const slides = [
@@ -13,9 +14,7 @@ const Home = () => {
     return (
         <>
             <Carousel slides={slides}/>
-            <div className="about">
-                
-            </div>
+            <AboutProject/>
             <ProjectInfo />
             <AboutMe />
         </> 

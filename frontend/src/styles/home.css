@@ -46,14 +46,3 @@
     background-color: #FFFFFF;
     color: #99CC02;
 }
-
-.about{
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background-image: url('/about.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
