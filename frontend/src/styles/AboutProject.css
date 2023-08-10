@@ -32,3 +32,15 @@
     line-height: 26.67px;
     text-align: center;
 }
+.glass button{
+    border-radius: 33px;
+    outline: 0;
+    border: none;
+    padding: 20px 33px;
+    background-color: #99CC02;
+    color: white;
+    font-family: "Roboto";
+    font-weight: 500;
+    font-family: 18.33px;
+    line-height: 15px;
+}
