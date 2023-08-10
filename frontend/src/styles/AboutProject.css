@@ -41,6 +41,12 @@
     color: white;
     font-family: "Roboto";
     font-weight: 500;
-    font-family: 18.33px;
+    font-size: 18.33px;
     line-height: 15px;
+    cursor: pointer;
+}
+
+.glass button:hover{
+    background-color: white;
+    color: #99CC02;
 }

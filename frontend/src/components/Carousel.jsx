@@ -20,6 +20,10 @@ const Carousel = ({slides}) => {
         }
     }
 
+    const jumpToSilde = (index) => {
+        setSlideIndex(index);
+    }
+
     return ( 
         <div className="carousel" style={{backgroundImage : `url(${slides[slideIndex].url})`}}>
             <div className="arrow" onClick={prevSlide}>&larr;</div>
@@ -28,6 +32,11 @@ const Carousel = ({slides}) => {
                 <button className="title-button">LEARN MORE</button>
             </div>
             <div className="arrow" onClick={nextSlide}>&rarr;</div>
+            <div className="dot-container">
+                {slides.map( (slide,idx) => (
+                    <div key={idx} className="dot" onClick={() => jumpToSilde(idx)}>&#9679;</div>
+                ) )}
+            </div>
         </div>
      );
 }
