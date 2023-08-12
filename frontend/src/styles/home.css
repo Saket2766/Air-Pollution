@@ -1,11 +1,17 @@
 .carousel{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.slide{
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: relative;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+    margin: 0 auto;
+    width: 95%;
+    height: 100%;
 }
 
 .arrow{

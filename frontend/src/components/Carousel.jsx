@@ -26,16 +26,18 @@ const Carousel = ({slides}) => {
 
     return ( 
         <div className="carousel" style={{backgroundImage : `url(${slides[slideIndex].url})`}}>
-            <div className="arrow" onClick={prevSlide}><img src="/ArrowLeft.png" alt="left arrow" /></div>
-            <div className="title-container"> 
-                <h1 className="slide-title">{slides[slideIndex].title}</h1>
-                <button className="title-button">LEARN MORE</button>
-            </div>
-            <div className="arrow" onClick={nextSlide}><img src="/ArrowRight.png" alt="right arrow" /></div>
-            <div className="dot-container">
-                {slides.map( (slide,idx) => (
-                    <div key={idx} className="dot" onClick={() => jumpToSilde(idx)}>&#9679;</div>
-                ) )}
+            <div className="slide">
+                <div className="arrow" onClick={prevSlide}><img src="/ArrowLeft.png" alt="left arrow" /></div>
+                <div className="title-container"> 
+                    <h1 className="slide-title">{slides[slideIndex].title}</h1>
+                    <button className="title-button">LEARN MORE</button>
+                </div>
+                <div className="arrow" onClick={nextSlide}><img src="/ArrowRight.png" alt="right arrow" /></div>
+                <div className="dot-container">
+                    {slides.map( (slide,idx) => (
+                        <div key={idx} className="dot" onClick={() => jumpToSilde(idx)}>&#9679;</div>
+                    ) )}
+                </div>
             </div>
         </div>
      );
