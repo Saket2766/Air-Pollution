@@ -4,12 +4,27 @@ const Carousel = ({slides}) => {
 
     const [slideIndex,setSlideIndex] = useState(0);
 
+    const updateDot = () => {
+        var dots = $('.dot');
+        dots.map ( (dot,idx) => {
+            if(idx === slideIndex){
+                dot.addClass('active');
+                dot.removeClass('dot');
+            }
+            else{
+                dot.addClass('dot');
+                dot.removeClass('active');
+            }
+        })
+    } 
+
     const nextSlide = () =>{
         if(slides.length === slideIndex+1){
             setSlideIndex(0);
         }else{
             setSlideIndex(slideIndex+1);
         }
+        updateDot();
     }
     const prevSlide = () =>{
         if(slideIndex-1 < 0){
@@ -18,10 +33,12 @@ const Carousel = ({slides}) => {
         else{
             setSlideIndex(slideIndex-1);
         }
+        updateDot();
     }
 
     const jumpToSilde = (index) => {
         setSlideIndex(index);
+        updateDot();
     }
 
     return ( 

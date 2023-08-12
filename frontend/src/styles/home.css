@@ -37,6 +37,7 @@
 .active{
     font-size: 28px;
     color: #99CC02;
+    cursor: pointer;
 }
 
 .title-container{
