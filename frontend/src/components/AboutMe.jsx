@@ -7,7 +7,7 @@ const AboutMe = () => {
       <div className="AboutMeContent">
         <h1>About Me</h1>
         <p>
-         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab unde praesentium quisquam error repellendus ratione, tempore eum ex qui totam provident voluptate quibusdam accusamus animi accusantium! At quidem quis omnis autem nesciunt amet nam ea reprehenderit molestias unde, ipsam deserunt soluta veritatis, veniam itaque delectus est, in aperiam similique velit vel labore vero commodi dolore. Magni vero expedita dolorum consequatur amet doloremque ipsam, officia aliquid repellendus animi quidem earum. Voluptate magni blanditiis sunt! Mollitia, culpa!
+         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic mollitia modi quibusdam assumenda corporis, quas enim ratione asperiores eveniet quisquam, molestias eius. Temporibus deleniti ipsam, nulla enim voluptatum eos quae.
         </p>
         <a href="">Learn More</a>
       </div>

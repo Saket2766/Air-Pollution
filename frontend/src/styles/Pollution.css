@@ -1,18 +1,20 @@
 .Pollution {
-  width: 25vw;
+  width: 436px;
   margin: 5px 40px;
   color: black;
 }
 .ProjectInfo {
   color: black;
 }
-.Pollution img {
-  height: 40vh;
-  width: 25vw;
-}
+
 .ProjectInfo h1 {
-  text-align: center;
-  font-size: 4rem;
+  color: #252525;
+  font-family: Roboto;
+  font-size: 88px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 104px; /* 118.182% */
+  margin-left: 2.8vw;
 }
 .ProjectInfo h2 {
   font-size: 2.3rem;
@@ -24,4 +26,30 @@
   height: min-content;
   justify-content: center;
   justify-content: space-between;
+}
+.Pollution h2 {
+  color: rgba(37, 37, 37, 0.55);
+  font-family: Roboto;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+.Pollution p {
+  color: rgba(37, 37, 37, 0.8);
+  font-family: Roboto;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: left;
+}
+.Pollution .PollutionImage {
+  width: 436px;
+  height: 500px;
+  flex-shrink: 0;
+}
+.Pollution .LinkIcon {
+  width: 25px;
+  margin-right: 5px;
 }

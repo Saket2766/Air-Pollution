@@ -9,21 +9,22 @@ const ProjectData = [
     id: 1,
     title: "Air Pollution",
     Description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, natus sint similique quasi nihil voluptatem obcaecati quos excepturi consequatur illum? Recusandae officia, laudantium dolore dolorum pariatur expedita, harum animi, repellendus aliquam inventore magnam voluptas nisi? Hic obcaecati perferendis quis et.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptate eum perspiciatis, eveniet aperiam soluta impedit quis dolore mollitia facilis?",
     Img: AirPollutionImage,
   },
   {
     id: 2,
     title: "Water Pollution",
     Description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, natus sint similique quasi nihil voluptatem obcaecati quos excepturi consequatur illum? Recusandae officia, laudantium dolore dolorum pariatur expedita, harum animi, repellendus aliquam inventore magnam voluptas nisi? Hic obcaecati perferendis quis et.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptate eum perspiciatis, eveniet aperiam soluta impedit quis dolore mollitia facilis?",
+
     Img: WaterPollutionImage,
   },
   {
     id: 3,
     title: "Noise Pollution",
     Description:
-      "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, natus sint similique quasi nihil voluptatem obcaecati quos excepturi consequatur illum? Recusandae officia, laudantium dolore dolorum pariatur expedita, harum animi, repellendus aliquam inventore magnam voluptas nisi? Hic obcaecati perferendis quis et.",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta voluptate eum perspiciatis, eveniet aperiam soluta impedit quis dolore mollitia facilis?",
     Img: NoisePollutionImage,
   },
 ];
@@ -31,7 +32,7 @@ const ProjectData = [
 const ProjectInfo = () => {
   return (
     <div className="ProjectInfo">
-      <h1>More About the Project</h1>
+      <h1>More about the project...</h1>
       <div className="PollutionTypes">
         <PollutionType
           title={ProjectData[0].title}
