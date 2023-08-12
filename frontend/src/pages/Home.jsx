@@ -6,9 +6,9 @@ import AboutProject from "../components/AboutProject";
 const Home = () => {
 
     const slides = [
-        {url:"/Slide1.png" ,title: "Air Pollution"},
-        {url:"/Slide1.png" ,title: "Water Pollution"},
-        {url:"/Slide1.png" ,title: "Noise Pollution"}
+        {url:"/Slide1.png" ,title: "AIR POLLUTION"},
+        {url:"/Slide1.png" ,title: "WATER POLLUTION"},
+        {url:"/Slide1.png" ,title: "NOISE POLLUTION"}
     ]
 
     return (
