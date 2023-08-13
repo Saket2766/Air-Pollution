@@ -9,13 +9,13 @@ const Navbar = () => {
             <nav>
                 <ul>
                     <li>
-                        <Link>Search <img src="/search_icon.svg" alt="search icon" /></Link>
+                        <Link>SEARCH <img src="/search_icon.svg" alt="search icon" /></Link>
                     </li>
                     <li>
-                        <Link>Projects</Link>
+                        <Link>PROJECTS</Link>
                     </li>
                     <li>
-                        <Link>About Me</Link>
+                        <Link>ABOUT ME</Link>
                     </li>
                 </ul>
             </nav>
