@@ -1,17 +1,25 @@
 .logos img {
-  width: 5vw;
-  height: 5vh;
+  width: 4vh;
+  height: 4vh;
+  margin: 0px 10px;
 }
 footer {
-  background-color: green;
+  background: #99cc02;
   color: black;
   display: flex;
+  overflow-x: hidden;
 }
 footer h3 {
   margin-left: 10vh;
+  color: #000;
+font-family: Roboto;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 140%; /* 22.4px */
 }
 footer .logos {
-  position: absolute;
-  transform: translateX(290%);
+  position: relative;
+  left: 60%;
   margin: 10px 20px;
 }
