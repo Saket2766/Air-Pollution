@@ -3,12 +3,12 @@ import Select from "react-select";
 import Viz2 from "../Viz2";
 // eslint-disable-next-line react/prop-types
 const StateWise = ({ data }) => {
-  const [selectedYear, setSelectedYear] = useState(null); // Change initial value to null
+  const [selectedYear, setSelectedYear] = useState(null);
   const [selectedState, setSelectedState] = useState([]);
   const [selectedElement, setSelectedElement] = useState("");
 
   const handleYearChange = (selectedOption) => {
-    setSelectedYear(selectedOption); // Set the whole selectedOption object
+    setSelectedYear(selectedOption);
     setSelectedState([]);
     setSelectedElement("");
   };
@@ -44,7 +44,6 @@ const StateWise = ({ data }) => {
 
   if (selectedYear && selectedElement && selectedState) {
     selectedState.forEach((st) => {
-      // Use forEach instead of map
       let sum = 0;
       let cnt = 0;
       let median = 0;
@@ -72,7 +71,7 @@ const StateWise = ({ data }) => {
       <Select
         options={years}
         onChange={handleYearChange}
-        value={selectedYear} // Use the whole selectedYear object
+        value={selectedYear}
       />
 
       {selectedYear && (
