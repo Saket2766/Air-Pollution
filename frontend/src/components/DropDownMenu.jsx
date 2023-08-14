@@ -1,12 +1,15 @@
 import DropdownComponent from "./DropDownComponent";
 import * as data from "../data/data.json";
 import StateWise from "./BarChart/StateWise";
-
+import CityWise from "./BarChart/CityWise";
+import WithoutState from "./BarChart/WithoutState";
 const DropDownMenu = () => {
   return (
-    <div>
+    <div className="yl">
       <DropdownComponent data={data.default} />
       <StateWise data={data.default} />
+      <CityWise data={data.default} />
+      <WithoutState data={data.default} />
     </div>
   );
 };

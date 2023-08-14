@@ -1,57 +1,72 @@
 import { useState } from "react";
 import Select from "react-select";
-
+import Viz2 from "../Viz2";
 // eslint-disable-next-line react/prop-types
 const StateWise = ({ data }) => {
-  const [selectedYear, setSelectedYear] = useState("");
+  const [selectedYear, setSelectedYear] = useState(null); // Change initial value to null
   const [selectedState, setSelectedState] = useState([]);
   const [selectedElement, setSelectedElement] = useState("");
-  const [elementData, setElementData] = useState([]);
 
   const handleYearChange = (selectedOption) => {
-    setSelectedYear(selectedOption.value);
+    setSelectedYear(selectedOption); // Set the whole selectedOption object
     setSelectedState([]);
     setSelectedElement("");
-    setElementData([]);
   };
 
   const handleStateChange = (selectedOptions) => {
     setSelectedState(selectedOptions.map((option) => option.value));
     setSelectedElement("");
-    setElementData([]);
   };
 
   const handleElementChange = (selectedOption) => {
     setSelectedElement(selectedOption.value);
-    setElementData([]);
-
-    if (selectedYear && selectedState.length > 0 && selectedElement) {
-      const elementDataList = selectedState.flatMap((state) =>
-        Object.keys(data[selectedYear][state]).flatMap(
-          (city) => data[selectedYear][state][city][selectedElement]
-        )
-      );
-
-      setElementData(elementDataList);
-    }
   };
 
   const years = Object.keys(data).map((year) => ({
     value: year,
     label: year,
   }));
-  const statesArray = Object.keys(data[selectedYear] || {}).map((state) => ({
-    value: state,
-    label: state,
-  }));
+  const statesArray = Object.keys(data[selectedYear?.value] || {}).map(
+    (state) => ({
+      value: state,
+      label: state,
+    })
+  );
   const elements =
     selectedYear && selectedState.length > 0
       ? Object.keys(
-          data[selectedYear][selectedState[0]][
-            Object.keys(data[selectedYear][selectedState[0]])[0]
+          data[selectedYear.value][selectedState[0]][
+            Object.keys(data[selectedYear.value][selectedState[0]])[0]
           ]
         )
       : [];
+  let alldata2 = [];
+
+  if (selectedYear && selectedElement && selectedState) {
+    selectedState.forEach((st) => {
+      // Use forEach instead of map
+      let sum = 0;
+      let cnt = 0;
+      let median = 0;
+
+      Object.keys(data[selectedYear.value][st]).forEach((city) => {
+        if (
+          data[selectedYear.value][st] &&
+          data[selectedYear.value][st][city][selectedElement]
+        )
+          sum += data[selectedYear.value][st][city][selectedElement];
+        cnt++;
+      });
+
+      median = sum / cnt;
+      alldata2.push({
+        state: st,
+        data: Math.trunc(median),
+      });
+    });
+
+    console.log(alldata2);
+  }
 
   return (
     <div>
@@ -59,7 +74,7 @@ const StateWise = ({ data }) => {
       <Select
         options={years}
         onChange={handleYearChange}
-        value={selectedYear}
+        value={selectedYear} // Use the whole selectedYear object
       />
 
       {selectedYear && (
@@ -97,11 +112,11 @@ const StateWise = ({ data }) => {
         <div>
           <h3>
             Data for {selectedElement} in {selectedState.join(", ")} for{" "}
-            {selectedYear}:
+            {selectedYear.label}:
           </h3>
-          <pre>{JSON.stringify(elementData, null, 2)}</pre>
         </div>
       )}
+      {alldata2 != null && <Viz2 data={alldata2} />}
     </div>
   );
 };
