@@ -65,7 +65,7 @@ const StateWise = ({ data }) => {
             label: city,
           }))
       : [];
-  //   console.log(selected Cities);
+
   let alldata3 = [];
   if (
     selectedYear &&
@@ -90,7 +90,6 @@ const StateWise = ({ data }) => {
         });
       }
     });
-    console.log(alldata3);
   }
   return (
     <div>

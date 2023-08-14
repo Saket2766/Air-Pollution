@@ -70,7 +70,6 @@ const WithoutState = ({ data }) => {
       }
     });
   }
-  console.log(selectedData);
 
   return (
     <div>

@@ -11,11 +11,10 @@ import {
 
 const StateViz = (prop) => {
   const data = prop.data;
-  console.log(data);
+
   let newData = [];
   for (let i = 0; i < data.length; i++) {
     newData.push(data[i]);
-    console.log(newData[i].year);
   }
 
   return (

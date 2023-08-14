@@ -64,8 +64,6 @@ const StateWise = ({ data }) => {
         data: Math.trunc(median),
       });
     });
-
-    console.log(alldata2);
   }
 
   return (

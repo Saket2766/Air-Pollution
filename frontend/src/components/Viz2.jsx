@@ -11,7 +11,6 @@ import {
 
 export default function Viz2(prop) {
   const data = prop.data;
-  console.log(data);
   return (
     <div className="chart">
       <ResponsiveContainer width="100%" height="100%">
