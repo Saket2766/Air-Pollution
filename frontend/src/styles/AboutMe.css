@@ -1,9 +1,9 @@
 .AboutMe {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 10vh;
   color: black;
-  width: 75vw;
+  width: 100%;
 }
 
 .AboutMe h1 {
@@ -14,6 +14,9 @@
   font-weight: 400;
   line-height: 110%; /* 73.555px */
   letter-spacing: -3.009px;
+  /* float: right; */
+  text-align: center;
+  margin: 1px 0px 0px -50px;
 }
 .AboutMe p {
   color: var(--base-black, #23242a);
@@ -33,6 +36,7 @@
   align-items: center;
   flex-shrink: 0;
   margin: 50px;
+  float: left;
 }
 .AboutMe a {
   color: var(--base-primary, #0e6fff);
@@ -43,4 +47,16 @@
   line-height: 135%; /* 36.456px */
   letter-spacing: -0.27px;
   text-decoration-line: underline;
+}
+@media only screen and (max-width: 768px) {
+  .AboutMe{
+    display: flex;
+    flex-direction: column;
+  }
+  .AboutMe img{
+    /* align-items: center; */
+   justify-content: center;
+   margin-left: 150px;
+
+  }
 }

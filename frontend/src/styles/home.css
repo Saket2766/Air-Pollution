@@ -1,74 +1,80 @@
-.carousel{
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: cover;
+.carousel {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.slide{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-    margin: 0 auto;
-    width: 95%;
-    height: 100%;
+.slide {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin: 0 auto;
+  width: 95%;
+  height: 100%;
 }
 
-.arrow{
-    font-size: 47px;
-    color: #99CC02;
-    cursor: pointer;
+.arrow {
+  font-size: 47px;
+  color: #99cc02;
+  cursor: pointer;
 }
 
-.dot-container{
-    display: flex;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translate(-50%,0);
+.dot-container {
+  display: flex;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
-.dot{
-    font-size: 21px;
-    color: #999999;
-    cursor: pointer;
+.dot {
+  font-size: 21px;
+  color: #999999;
+  cursor: pointer;
 }
 
-.active{
-    font-size: 28px;
-    color: #99CC02;
-    cursor: pointer;
+.active {
+  font-size: 28px;
+  color: #99cc02;
+  cursor: pointer;
 }
 
-.title-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.slide-title{
-    font-size: 120px;
-    font-weight: 900;
-    line-height: 140px;
+.slide-title {
+  font-size: 120px;
+  font-weight: 900;
+  line-height: 140px;
 }
 
-.title-button{
-    background-color: #99CC02;
-    color: #FFFFFF;
-    font-size: 23px;
-    font-weight: 700;
-    line-height: 27.6px;
-    letter-spacing: -3%;
-    padding: 14px 31px;
-    outline: 0;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.1s ease;
+.title-button {
+  background-color: #99cc02;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 27.6px;
+  letter-spacing: -3%;
+  padding: 14px 31px;
+  outline: 0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.1s ease;
 }
 
-.title-button:hover{
-    background-color: #FFFFFF;
-    color: #99CC02;
+.title-button:hover {
+  background-color: #ffffff;
+  color: #99cc02;
+}
+@media only screen and (max-width: 768px) {
+  .arrow {
+    width: 10vw;
+    height: 10vw;
+  }
 }

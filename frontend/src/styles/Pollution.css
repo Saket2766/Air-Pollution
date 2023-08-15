@@ -1,5 +1,5 @@
 .Pollution {
-  width: 436px;
+  width: 100%;
   margin: 5px 40px;
   color: black;
 }
@@ -25,12 +25,12 @@
   flex-direction: row;
   height: min-content;
   justify-content: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .Pollution h2 {
   color: rgba(37, 37, 37, 0.55);
   font-family: Roboto;
-  font-size: 40px;
+  font-size: 4rem;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -52,4 +52,30 @@
 .Pollution .LinkIcon {
   width: 25px;
   margin-right: 5px;
+}
+@media only screen and (max-width: 768px) {
+  .ProjectInfo {
+    width: min-content;
+    display: flex;
+    flex-direction: column;
+    z-index: 10000;
+    width: 768px;
+  }
+  .PollutionTypes {
+    display: flex;
+    flex-direction: column;
+    width: 768px;
+
+    /* height: 2vw; */
+    text-align: center;
+  }
+  .Pollution {
+display: flex;
+flex-direction: column;
+align-items: center;
+  }
+  .Pollution h2 {
+    /* margin-left: -170px; */
+    text-align: center;
+  }
 }

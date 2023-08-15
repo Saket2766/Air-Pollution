@@ -12,14 +12,40 @@ footer {
 footer h3 {
   margin-left: 10vh;
   color: #000;
-font-family: Roboto;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 140%; /* 22.4px */
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%; /* 22.4px */
 }
 footer .logos {
   position: relative;
   left: 60%;
   margin: 10px 20px;
+}
+@media only screen and (max-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  footer h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-left: 0px;
+  }
+  footer .logos {
+    left: 0;
+  }
+  footer .logos img {
+    width: 15vw;
+    height: 15vw;
+  }
+  * {
+    text-align: center;
+    align-items: center;
+    overflow-x: hidden;
+    width: 768px;
+  }
 }
