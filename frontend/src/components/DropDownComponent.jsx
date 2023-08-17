@@ -1,5 +1,6 @@
 import { useState } from "react";
 import StateViz from "./StateViz";
+import "../styles/Chart.css";
 // eslint-disable-next-line react/prop-types
 const DropDownComponent = ({ data }) => {
   //   const years = Object.keys(data);
@@ -113,7 +114,11 @@ const DropDownComponent = ({ data }) => {
       </select> */}
 
       <label>Select State:</label>
-      <select value={selectedState} onChange={handleStateChange}>
+      <select
+        value={selectedState}
+        onChange={handleStateChange}
+        className="State"
+      >
         <option value="">Select</option>
         {states.map((state) => (
           <option key={state} value={state}>
@@ -123,7 +128,7 @@ const DropDownComponent = ({ data }) => {
       </select>
 
       <label>Select City:</label>
-      <select value={selectedCity} onChange={handleCityChange}>
+      <select value={selectedCity} onChange={handleCityChange} className="City">
         <option value="">Select</option>
         {cities.map((city) => (
           <option key={city} value={city}>
@@ -133,7 +138,11 @@ const DropDownComponent = ({ data }) => {
       </select>
 
       <label>Select Element:</label>
-      <select value={selectedElement} onChange={handleElementChange}>
+      <select
+        value={selectedElement}
+        onChange={handleElementChange}
+        className="Element"
+      >
         <option value="">Select</option>
         {elements.map((element) => (
           <option key={element} value={element}>

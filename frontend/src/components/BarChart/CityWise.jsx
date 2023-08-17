@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Select from "react-select";
 import Viz3 from "../Viz3";
+import "../../styles/Chart.css";
 
 // eslint-disable-next-line react/prop-types
 const StateWise = ({ data }) => {
@@ -98,6 +99,7 @@ const StateWise = ({ data }) => {
         options={years}
         onChange={handleYearChange}
         value={selectedYear}
+        className="Year"
       />
 
       {selectedYear && (
@@ -107,6 +109,7 @@ const StateWise = ({ data }) => {
             options={statesArray}
             onChange={handleStateChange}
             value={selectedState}
+            className="State"
           />
 
           {selectedState && (
@@ -119,6 +122,7 @@ const StateWise = ({ data }) => {
                 }))}
                 onChange={handleElementChange}
                 value={selectedElement}
+                className="Element"
               />
 
               <label>Select Cities:</label>
@@ -127,6 +131,7 @@ const StateWise = ({ data }) => {
                 onChange={handleCityChange}
                 value={selectedCities}
                 isMulti
+                className="City"
               />
             </>
           )}
