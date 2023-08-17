@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Select from "react-select";
-import Viz3 from "../Viz3";
+import Viz3 from "./Viz3";
 import "../../styles/Chart.css";
 // eslint-disable-next-line react/prop-types
 const WithoutState = ({ data }) => {
@@ -73,7 +73,7 @@ const WithoutState = ({ data }) => {
   }
 
   return (
-    <div>
+    <div className="chartComp">
       <label>Select Year:</label>
       <Select
         options={years}

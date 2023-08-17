@@ -14,3 +14,40 @@
   width: 20%;
   color: black;
 }
+
+.chartComp {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+}
+
+.chartComp label {
+  margin-bottom: 5px;
+}
+
+.Year,
+.City,
+.State,
+.Element {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+  .chartComp {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .Year,
+  .City,
+  .State,
+  .Element {
+    width: 100%;
+    margin-bottom: 10px;
+    height: 15vw;
+  }
+}

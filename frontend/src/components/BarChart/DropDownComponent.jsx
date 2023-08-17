@@ -1,6 +1,6 @@
 import { useState } from "react";
 import StateViz from "./StateViz";
-import "../styles/Chart.css";
+import "../../styles/Chart.css";
 // eslint-disable-next-line react/prop-types
 const DropDownComponent = ({ data }) => {
   //   const years = Object.keys(data);
@@ -103,7 +103,7 @@ const DropDownComponent = ({ data }) => {
   }
 
   return (
-    <div>
+    <div className="chartComp">
       {/* <label>Select Year:</label>
       <select value={selectedYear} onChange={handleYearChange}>
         {years.map((year) => (
