@@ -45,14 +45,14 @@ const Carousel = ({ slides }) => {
     >
       <div className="slide">
         <div className="arrow" onClick={prevSlide}>
-          <img src="/ArrowLeft.png" alt="left arrow" />
+          <img src="/ArrowLeft.png" alt="left arrow" className="img" />
         </div>
         <div className="title-container">
           <h1 className="slide-title">{slides[slideIndex].title}</h1>
           <button className="title-button">LEARN MORE</button>
         </div>
         <div className="arrow" onClick={nextSlide}>
-          <img src="/ArrowRight.png" alt="right arrow" />
+          <img src="/ArrowRight.png" alt="right arrow" className="img"/>
         </div>
         <div className="dot-container">
           {slides.map((slide, idx) => (

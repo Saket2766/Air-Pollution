@@ -12,11 +12,10 @@
   margin: 0 auto;
   width: 95%;
   height: 100%;
+  overflow: hidden;
 }
 
 .arrow {
-  font-size: 47px;
-  color: #99cc02;
   cursor: pointer;
 }
 
@@ -73,8 +72,21 @@
   color: #99cc02;
 }
 @media only screen and (max-width: 768px) {
+  
+  .slide{
+    width: 95%;
+  }
+  .title-container{
+    width: 80%;
+  }
   .arrow {
-    width: 10vw;
-    height: 10vw;
+    width: 4vw;
+  }
+  .img{
+    width: 100%;
+  }
+  .slide-title{
+    font-size: 64px;
+    line-height: 1.16;
   }
 }
