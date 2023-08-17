@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Select from "react-select";
 import Viz2 from "../Viz2";
+import "../../styles/Chart.css";
 // eslint-disable-next-line react/prop-types
 const StateWise = ({ data }) => {
   const [selectedYear, setSelectedYear] = useState(null);
@@ -72,6 +73,7 @@ const StateWise = ({ data }) => {
         options={years}
         onChange={handleYearChange}
         value={selectedYear}
+        className="Year"
       />
 
       {selectedYear && (
@@ -84,6 +86,7 @@ const StateWise = ({ data }) => {
               selectedState.includes(state.value)
             )}
             isMulti
+            className="State"
           />
         </>
       )}
@@ -94,6 +97,7 @@ const StateWise = ({ data }) => {
           <select
             value={selectedElement}
             onChange={(e) => handleElementChange({ value: e.target.value })}
+            className="Element"
           >
             <option value="">Select</option>
             {elements.map((element) => (
