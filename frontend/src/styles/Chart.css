@@ -16,9 +16,9 @@
 }
 
 .chartComp {
-  /* background-color: black; */
-  /* color: white; */
-  color: black;
+  background-color: black;
+  color: white;
+  /* color: black; */
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -32,6 +32,9 @@
 .chartComp label {
   margin-bottom: 5px;
 }
+/* *{
+  background-color: grey;
+} */
 
 .Year,
 .City,
