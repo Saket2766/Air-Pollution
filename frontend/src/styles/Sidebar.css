@@ -1,0 +1,15 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto",sans-serif;
+    font-size: 40px;
+    background-color: aquamarine;
+    width: 30vw;
+    margin-top: 7vh;
+    padding: 30px;
+}
+.sidebar-item{
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
