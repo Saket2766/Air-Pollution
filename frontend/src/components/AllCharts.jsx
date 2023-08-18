@@ -1,11 +1,11 @@
 import DropDownMenu from "../components/DropDownMenu";
 
-const AllCharts = ({ children }) => {
+const AllCharts = () => {
   return (
     <div>
       <h1>All Charts</h1>
-      {children}
-      {/* <DropDownMenu /> */}
+      {/* {children} */}
+      <DropDownMenu />
     </div>
   );
 };

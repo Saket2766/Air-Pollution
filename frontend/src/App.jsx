@@ -11,14 +11,19 @@ function App() {
       <BrowserRouter>
         <Navbar />
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Charts />} />
-        </Routes>
+        <div className="content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/projects" element={<Charts />} />
+          </Routes>
+        </div>
+
         <Footer />
+        {/* <DropDownMenu /> */}
       </BrowserRouter>
     </div>
   );
 }
+
 
 export default App;

@@ -3,9 +3,20 @@ import "../styles/navbar.css";
 
 const Navbar = () => {
   const handleScrollToAboutMe = () => {
+    const currentURL = window.location.href;
+    if (currentURL.includes("/projects")) {
+      window.location.href = "/";
+    }
     const aboutMeSection = document.getElementById("about-me");
     if (aboutMeSection) {
       aboutMeSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollTopHandler = () => {
+    const homeTopSection = document.getElementById("HomeCarousel");
+    if (homeTopSection) {
+      homeTopSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -19,7 +30,9 @@ const Navbar = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/">HOME</Link>
+            <Link to="/" onClick={scrollTopHandler}>
+              HOME
+            </Link>
           </li>
           <li>
             <Link to="#" onClick={handleScrollToAboutMe}>

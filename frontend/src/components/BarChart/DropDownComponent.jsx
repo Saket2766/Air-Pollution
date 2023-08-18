@@ -104,6 +104,7 @@ const DropDownComponent = ({ data }) => {
 
   return (
     <div className="chartComp">
+      <h1>Year Wise Comparison</h1>
       {/* <label>Select Year:</label>
       <select value={selectedYear} onChange={handleYearChange}>
         {years.map((year) => (
