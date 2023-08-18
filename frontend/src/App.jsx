@@ -1,8 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Charts from "./pages/Charts";
 import Footer from "./components/Footer";
-import DropDownMenu from "./components/DropDownMenu";
+// import DropDownMenu from "./components/DropDownMenu";
 
 function App() {
   return (
@@ -12,9 +13,9 @@ function App() {
 
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Charts />} />
         </Routes>
         <Footer />
-        <DropDownMenu />
       </BrowserRouter>
     </div>
   );
