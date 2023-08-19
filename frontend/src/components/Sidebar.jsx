@@ -1,12 +1,12 @@
 import "../styles/Sidebar.css"
 
-const Sidebar = () => {
+const Sidebar = ({funcState}) => {
     return ( 
     <nav className="sidebar">
         <div className="sidebar-label">
             Visualizations
         </div>
-        <div className="sidebar-item">
+        <div className="sidebar-item" onClick={funcState}>
             Statewise
         </div>
         <div className="sidebar-item">
