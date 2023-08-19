@@ -9,21 +9,41 @@ const StateWise = ({ data }) => {
   const [selectedState, setSelectedState] = useState(null);
   const [selectedElement, setSelectedElement] = useState(null);
   const [selectedCities, setSelectedCities] = useState([]);
+  const [selectedNewEle, setSelectedNewEle] = useState("");
 
   const handleYearChange = (selectedOption) => {
     setSelectedYear(selectedOption);
     setSelectedState(null);
-    setSelectedElement(null);
+    setSelectedElement("");
     setSelectedCities([]);
   };
 
   const handleStateChange = (selectedOption) => {
     setSelectedState(selectedOption);
+    setSelectedElement("");
     setSelectedCities([]);
   };
 
   const handleElementChange = (selectedOption) => {
-    setSelectedElement(selectedOption);
+    let elePm2 = "pm2.5";
+    let elePm10 = "pm10";
+    let eleSo2 = "So2";
+    let eleNo2 = "No2";
+    if (selectedOption.value === "AQI" && selectedYear && selectedState) {
+      setSelectedNewEle("AQI");
+      if (elements.includes(elePm10)) {
+        setSelectedElement(elePm10);
+      } else if (elements.includes(elePm2)) {
+        setSelectedElement(elePm2);
+      } else if (elements.includes(eleSo2)) {
+        setSelectedElement(eleSo2);
+      } else if (elements.includes(eleNo2)) {
+        setSelectedElement(eleNo2);
+      }
+    } else {
+      setSelectedNewEle(selectedOption.value);
+      setSelectedElement(selectedOption.value);
+    }
     setSelectedCities([]);
   };
 
@@ -45,6 +65,7 @@ const StateWise = ({ data }) => {
         )
       : [];
 
+  selectedYear && selectedState && elements.push("AQI");
   const statesArray = Object.keys(data[selectedYear?.value] || {}).map(
     (state) => ({
       value: state,
@@ -58,7 +79,7 @@ const StateWise = ({ data }) => {
           .filter(
             (city) =>
               data[selectedYear.value][selectedState.value][city][
-                selectedElement.value
+                selectedElement
               ]
           )
           .map((city) => ({
@@ -78,12 +99,12 @@ const StateWise = ({ data }) => {
       if (
         data[selectedYear.value][selectedState.value][city.value] &&
         data[selectedYear.value][selectedState.value][city.value][
-          selectedElement.value
+          selectedElement
         ]
       ) {
         const concentration =
           data[selectedYear.value][selectedState.value][city.value][
-            selectedElement.value
+            selectedElement
           ];
         alldata3.push({
           city: city.label,
@@ -92,63 +113,70 @@ const StateWise = ({ data }) => {
       }
     });
   }
+  console.log(selectedNewEle);
   return (
     <div className="chartComp">
-      <h1>City Wise Comparison for Each State</h1>
-      <label>Select Year:</label>
-      <Select
-        options={years}
-        onChange={handleYearChange}
-        value={selectedYear}
-        className="Year"
-      />
+      <div>
+        <h1>City Wise Comparison for Each State</h1>
+        <label>Select Year:</label>
+        <Select
+          options={years}
+          onChange={handleYearChange}
+          value={selectedYear}
+          className="Year"
+        />
 
-      {selectedYear && (
-        <>
-          <label>Select State:</label>
-          <Select
-            options={statesArray}
-            onChange={handleStateChange}
-            value={selectedState}
-            className="State"
-          />
+        {selectedYear && (
+          <>
+            <label>Select State:</label>
+            <Select
+              options={statesArray}
+              onChange={handleStateChange}
+              value={selectedState}
+              className="State"
+            />
 
-          {selectedState && (
-            <>
-              <label>Select Element:</label>
-              <Select
-                options={elements.map((element) => ({
-                  value: element,
-                  label: element,
-                }))}
-                onChange={handleElementChange}
-                value={selectedElement}
-                className="Element"
-              />
+            {selectedState && (
+              <>
+                <label>Select Element:</label>
+                {/* <Select
+                  options={elements.map((element) => ({
+                    value: element,
+                    label: element,
+                  }))}
+                  value={selectedNewEle}
+                  onChange={handleElementChange}
+                  className="Element"
+                /> */}
+                <select
+                  value={selectedNewEle}
+                  onChange={(e) =>
+                    handleElementChange({ value: e.target.value })
+                  }
+                  className="Element"
+                >
+                  <option value="">Select</option>
+                  {elements.map((element) => (
+                    <option key={element} value={element}>
+                      {element}
+                    </option>
+                  ))}
+                </select>
 
-              <label>Select Cities:</label>
-              <Select
-                options={cityOptions}
-                onChange={handleCityChange}
-                value={selectedCities}
-                isMulti
-                className="City"
-              />
-            </>
-          )}
-        </>
-      )}
-
-      {selectedCities.length > 0 && selectedElement && (
-        <div>
-          <h3>
-            Data for {selectedElement.label} in {selectedState.label},{" "}
-            {selectedCities.map((city) => city.label).join(", ")} for{" "}
-            {selectedYear.label}:
-          </h3>
-        </div>
-      )}
-      {alldata3 != null && <Viz3 data={alldata3} />}
+                <label>Select Cities:</label>
+                <Select
+                  options={cityOptions}
+                  onChange={handleCityChange}
+                  value={selectedCities}
+                  isMulti
+                  className="City"
+                />
+              </>
+            )}
+          </>
+        )}
+      </div>
+      <div>{alldata3 != null && <Viz3 data={alldata3} />}</div>
     </div>
   );
 };

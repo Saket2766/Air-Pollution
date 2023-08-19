@@ -20,10 +20,10 @@ const StateViz = (prop) => {
 
   return (
     <div className="chart">
-      <ResponsiveContainer width="150%" height="100%" className="LineChart">
+      <ResponsiveContainer width="250%" height="150%" className="LineChart">
         <LineChart
-          width={500}
-          height={300}
+          width={1000}
+          height={800}
           data={data}
           margin={{
             top: 5,
@@ -31,6 +31,7 @@ const StateViz = (prop) => {
             left: 20,
             bottom: 5,
           }}
+          className="LineChartLine"
         >
           <CartesianGrid strokeDasharray="3 3" />
           <Legend

@@ -91,49 +91,50 @@ const StateWise = ({ data }) => {
 
   return (
     <div className="chartComp">
-      <h1>State Wise</h1>
-      <label>Select Year:</label>
-      <Select
-        options={years}
-        onChange={handleYearChange}
-        value={selectedYear}
-        className="Year"
-      />
+      <div>
+        <h1>State Wise</h1>
+        <label>Select Year:</label>
+        <Select
+          options={years}
+          onChange={handleYearChange}
+          value={selectedYear}
+          className="Year"
+        />
 
-      {selectedYear && (
-        <>
-          <label>Select State:</label>
-          <Select
-            options={statesArray}
-            onChange={handleStateChange}
-            value={statesArray.filter((state) =>
-              selectedState.includes(state.value)
-            )}
-            isMulti
-            className="State"
-          />
-        </>
-      )}
+        {selectedYear && (
+          <>
+            <label>Select State:</label>
+            <Select
+              options={statesArray}
+              onChange={handleStateChange}
+              value={statesArray.filter((state) =>
+                selectedState.includes(state.value)
+              )}
+              isMulti
+              className="State"
+            />
+          </>
+        )}
 
-      {selectedState.length > 0 && (
-        <>
-          <label>Select Element:</label>
-          <select
-            value={selectedNewEle}
-            onChange={(e) => handleElementChange({ value: e.target.value })}
-            className="Element"
-          >
-            <option value="">Select</option>
-            {elements.map((element) => (
-              <option key={element} value={element}>
-                {element}
-              </option>
-            ))}
-          </select>
-        </>
-      )}
-
-      {alldata2 != null && <Viz2 data={alldata2} />}
+        {selectedState.length > 0 && (
+          <>
+            <label>Select Element:</label>
+            <select
+              value={selectedNewEle}
+              onChange={(e) => handleElementChange({ value: e.target.value })}
+              className="Element"
+            >
+              <option value="">Select</option>
+              {elements.map((element) => (
+                <option key={element} value={element}>
+                  {element}
+                </option>
+              ))}
+            </select>
+          </>
+        )}
+      </div>
+      <div>{alldata2 != null && <Viz2 data={alldata2} />}</div>
     </div>
   );
 };
