@@ -37,6 +37,7 @@
   flex-shrink: 0;
   margin: 50px;
   float: left;
+  border-radius: 10px;
 }
 .AboutMe a {
   color: var(--base-primary, #0e6fff);

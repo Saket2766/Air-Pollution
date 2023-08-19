@@ -1,6 +1,6 @@
 .Pollution {
-  width: 100%;
-  margin: 5px 40px;
+  width: 25%;
+  margin: 5px 50px;
   color: black;
 }
 .ProjectInfo {
@@ -24,8 +24,8 @@
   display: flex;
   flex-direction: row;
   height: min-content;
-  justify-content: center;
-  justify-content: space-evenly;
+  overflow-x: hidden;
+  margin: 0px -30px;
 }
 .Pollution h2 {
   color: rgba(37, 37, 37, 0.55);
@@ -38,7 +38,7 @@
 .Pollution p {
   color: rgba(37, 37, 37, 0.8);
   font-family: Roboto;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -48,6 +48,7 @@
   width: 436px;
   height: 500px;
   flex-shrink: 0;
+  border-radius: 5px;
 }
 .Pollution .LinkIcon {
   width: 25px;
@@ -74,8 +75,6 @@
   }
   .Pollution p {
     text-align: center;
-    margin: 0px 40px;
-    padding: 0px 20px;
   }
   .Pollution h2 {
     text-align: center;
