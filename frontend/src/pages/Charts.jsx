@@ -10,17 +10,18 @@ import WithoutState from "../components/BarChart/WithoutState";
 
 import "../styles/Charts.css";
 
-const [charts,setCharts] = useState(<DropDownMenu/>);
+const [charts,setCharts] = useState();
 
 const showStatewise = () => {
-  setCharts(<StateWise data={data.default} />)
+  setCharts()
 }
 
 const Charts = () => {
   return (
     <div style={{display:"flex"}}>
-      <Sidebar showStatewise={showStatewise}/>
-      <AllCharts charts={charts}/>
+      <Sidebar/>
+      <AllCharts>
+      </AllCharts>
     </div>
   );
 };
