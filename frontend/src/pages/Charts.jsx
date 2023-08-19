@@ -1,6 +1,5 @@
 import { useState } from "react";
 import AllCharts from "../components/AllCharts";
-import DropDownMenu from "../components/DropDownMenu";
 import Sidebar from "../components/Sidebar";
 import DropdownComponent from "../components/BarChart/DropDownComponent";
 import * as data from "../data/data.json";
