@@ -7,7 +7,7 @@ const Charts = () => {
   return (
     <div style={{display:"flex"}}>
       <Sidebar/>
-      <AllCharts />
+      <AllCharts/>
     </div>
   );
 };
