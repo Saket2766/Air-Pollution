@@ -13,6 +13,7 @@
 .sidebar-label{
     color: #212529;
     font-weight: 500;
+    margin-bottom: 30px;
 }
 .sidebar-item{
     border-radius: 3px;
