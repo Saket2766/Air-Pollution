@@ -8,6 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import '../../styles/VizStyles.css';
 
 export default function Viz3(prop) {
   const data = prop.data;

@@ -26,6 +26,7 @@
   /* margin-top: 20px; */
   position: relative;
   left: 50%;
+
   /* border: 2px solid black; */
 }
 
@@ -48,6 +49,10 @@
   .chartComp {
     width: 100%;
     padding: 10px;
+    left: 0;
+    font-size: 2rem;
+    height: 400vw;
+    height:200vh;
   }
 
   .Year,
@@ -55,7 +60,7 @@
   .State,
   .Element {
     width: 100%;
-    margin-bottom: 10px;
-    height: 15vw;
+    margin-bottom: 60px;
+    height:20%;
   }
 }
