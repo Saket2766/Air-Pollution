@@ -19,7 +19,7 @@ const showStatewise = () => {
 const Charts = () => {
   return (
     <div style={{display:"flex"}}>
-      <Sidebar funcState={showStatewise}/>
+      <Sidebar showStatewise={showStatewise}/>
       <AllCharts charts={charts}/>
     </div>
   );
