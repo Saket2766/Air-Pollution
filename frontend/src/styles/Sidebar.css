@@ -16,14 +16,19 @@
 }
 .sidebar-label{
     color: #212529;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 30px;
 }
 .sidebar-item{
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 10px 20px;
     color: #343a40;
     cursor: pointer;
+    transition: all ease 0.15s;
+}
+.sidebar-item:hover{
+    background-color: #212529;
+    color: #99CC02;
 }
 
 @media only screen and (max-width: 768px) {
@@ -52,5 +57,9 @@
         margin: 0;
         width: 70vw;
         height: 100vh;
+    }
+    .sidebar-item{
+        padding: 20px 60px;
+        border-bottom: 1px solid #495057;
     }
 }
