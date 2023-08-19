@@ -20,7 +20,7 @@ const StateViz = (prop) => {
 
   return (
     <div className="chart">
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="150%" height="100%" className="LineChart">
         <LineChart
           width={500}
           height={300}
@@ -37,10 +37,8 @@ const StateViz = (prop) => {
             className="Legend"
             verticalAlign="top"
             width={100}
-            // height={}
             layout="vertical"
             align="right"
-            // margin={{right:120}}
             iconSize={30}
           />
           <XAxis dataKey="year" />
