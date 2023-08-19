@@ -5,13 +5,13 @@ const Sidebar = ({showStatewise,showYearwise,showCitywiseForState,showCitywise})
 
     const [active,setActive] = useState(false);
 
-    const toggleHidden = () => {
+    const toggleActive = () => {
         setActive(!active);
     }
 
   return (
     <>
-        <div className="hamburger"  onClick={toggleHidden}><img className="menu-icon" src={`${active?"/cross.svg":"/hamburger.svg"}`} alt="ham"/></div>
+        <div className="hamburger"  onClick={toggleActive}><img className="menu-icon" src={`${active?"/cross.svg":"/hamburger.svg"}`} alt="ham"/></div>
         <nav className={`sidebar ${active? "":"hidden"}`}>
             <div className="sidebar-label">Visualizations</div>
             <div className="sidebar-item" onClick={showYearwise}>Year Wise Comparison</div>
