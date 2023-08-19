@@ -1,22 +1,15 @@
-import "../styles/Sidebar.css"
+import "../styles/Sidebar.css";
 
 const Sidebar = () => {
-    return ( 
+  return (
     <nav className="sidebar">
-        <div className="sidebar-label">
-            Visualizations
-        </div>
-        <div className="sidebar-item">
-            Statewise
-        </div>
-        <div className="sidebar-item">
-            Citywise
-        </div>
-        <div className="sidebar-item">
-            Without State
-        </div>
+      <div className="sidebar-label">Visualizations</div>
+      <div className="sidebar-item">Year Wise Comparison</div>
+      <div className="sidebar-item">Statewise Comparison</div>
+      <div className="sidebar-item">Citywise Comparison for Each State</div>
+      <div className="sidebar-item">City wise Comparison</div>
     </nav>
-     );
-}
- 
+  );
+};
+
 export default Sidebar;
