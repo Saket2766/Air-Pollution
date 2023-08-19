@@ -22,8 +22,8 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 .chart {
-  height: 500px;
-  width: 500px;
+  height: 40vh;
+  width: 40vh;
 }
 .basic-multi-select {
   color: black;
