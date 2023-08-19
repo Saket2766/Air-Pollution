@@ -52,7 +52,7 @@
     left: 0;
     font-size: 2rem;
     height: 400vw;
-    height:200vh;
+    height: 200vh;
   }
 
   .Year,
@@ -61,6 +61,6 @@
   .Element {
     width: 100%;
     margin-bottom: 60px;
-    height:20%;
+    height: 20%;
   }
 }
