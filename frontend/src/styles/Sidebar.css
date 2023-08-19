@@ -33,12 +33,21 @@
     .hamburger{
         display: block;
         position: fixed;
-        height: 5vh;
-        width: 5vh;
-        top: 7vh;
+        height: 10vh;
+        width: 10vh;
+        top: 0;
         left: 0;
+        z-index: 200;
+        overflow: hidden;
+        cursor: pointer;
     }
     .menu-icon{
         width: 100%;
+    }
+    .sidebar{
+        position: fixed;
+        top:0;
+        left: 0;
+        z-index: 150;
     }
 }
