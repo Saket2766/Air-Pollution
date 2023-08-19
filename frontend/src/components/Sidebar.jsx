@@ -16,7 +16,7 @@ const Sidebar = ({
   return (
     <>
       <div className="hamburger" onClick={toggleHidden}>
-        <img className="menu-icon" src="/hamburger.svg" alt="ham" />
+        <img className="menu-icon" src={`${active?"/cross.svg":"/hamburger.svg"}`} alt="ham" />
       </div>
       <nav className={`sidebar ${active ? "" : "hidden"}`}>
         <div className="sidebar-label">Visualizations</div>
