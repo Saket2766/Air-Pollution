@@ -5,10 +5,10 @@ import "../styles/Charts.css";
 
 const Charts = () => {
   return (
-    <>
+    <div style={{display:"flex"}}>
       <Sidebar/>
       <AllCharts />
-    </>
+    </div>
   );
 };
 
