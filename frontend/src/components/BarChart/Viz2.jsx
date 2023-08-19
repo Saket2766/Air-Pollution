@@ -14,7 +14,6 @@ export default function Viz2(prop) {
   const data = prop.data;
   return (
     <div className="chart">
-      <h1>Hello</h1>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
           width={500}
