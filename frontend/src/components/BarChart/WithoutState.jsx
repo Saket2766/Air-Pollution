@@ -74,6 +74,7 @@ const WithoutState = ({ data }) => {
 
   return (
     <div className="chartComp">
+      <h1>City Wise Comparison for all Cities</h1>
       <label>Select Year:</label>
       <Select
         options={years}

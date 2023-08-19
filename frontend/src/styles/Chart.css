@@ -18,15 +18,23 @@
 .chartComp {
   background-color: black;
   color: white;
+  /* color: black; */
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 40%;
   padding: 10px;
+  /* margin-top: 20px; */
+  position: relative;
+  left: 50%;
+  border: 2px solid black;
 }
 
 .chartComp label {
   margin-bottom: 5px;
 }
+/* *{
+  background-color: grey;
+} */
 
 .Year,
 .City,

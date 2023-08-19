@@ -1,0 +1,23 @@
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto",sans-serif;
+    font-size: 20px;
+    background-color: #99CC02;
+    color: #EBF8F6;
+    border-top-left-radius: 20px;
+    width: 20vw;
+    margin-top: 7vh;
+    padding: 30px;
+}
+.sidebar-label{
+    color: #212529;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.sidebar-item{
+    border-radius: 3px;
+    padding: 10px 20px;
+    color: #343a40;
+    cursor: pointer;
+}

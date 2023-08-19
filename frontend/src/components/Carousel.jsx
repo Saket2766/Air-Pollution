@@ -40,7 +40,7 @@ const Carousel = ({ slides }) => {
 
   return (
     <div
-      className="carousel"
+      className="carousel" id="HomeCarousel"
       style={{ backgroundImage: `url(${slides[slideIndex].url})` }}
     >
       <div className="slide">

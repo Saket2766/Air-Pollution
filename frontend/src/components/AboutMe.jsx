@@ -4,7 +4,7 @@ const AboutMe = () => {
   return (
     <div className="AboutMe">
       <h1>About Me</h1>
-      <div className="AboutMeContent">
+      <div className="AboutMeContent" id="about-me">
         <img src={Anikeit} alt="Picture of Anikeit Saxena"></img>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic mollitia

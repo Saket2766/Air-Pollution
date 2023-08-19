@@ -8,6 +8,7 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import "../../styles/VizStyles.css";
 
 const StateViz = (prop) => {
   const data = prop.data;
@@ -32,10 +33,19 @@ const StateViz = (prop) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
+          <Legend
+            className="Legend"
+            verticalAlign="top"
+            width={100}
+            // height={}
+            layout="vertical"
+            align="right"
+            // margin={{right:120}}
+            iconSize={30}
+          />
           <XAxis dataKey="year" />
           <YAxis />
           <Tooltip />
-          <Legend />
           <Line
             type="monotone"
             dataKey="data"

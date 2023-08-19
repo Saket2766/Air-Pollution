@@ -11,6 +11,14 @@ header {
   height: 7vh;
   z-index: 100;
 }
+.Logo{
+  text-decoration: none;
+  color: black;
+}
+.logo{
+  
+  margin: 10px 0px;
+}
 
 nav {
   width: 30%;

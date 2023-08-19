@@ -94,6 +94,7 @@ const StateWise = ({ data }) => {
   }
   return (
     <div className="chartComp">
+      <h1>City Wise Comparison for Each State</h1>
       <label>Select Year:</label>
       <Select
         options={years}

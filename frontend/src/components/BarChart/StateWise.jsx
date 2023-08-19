@@ -68,6 +68,7 @@ const StateWise = ({ data }) => {
 
   return (
     <div className="chartComp">
+      <h1>State Wise</h1>
       <label>Select Year:</label>
       <Select
         options={years}
