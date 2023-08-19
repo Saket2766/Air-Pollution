@@ -12,14 +12,27 @@ import "../styles/Charts.css";
 
 
 const Charts = () => {
-  const [charts,setCharts] = useState(<DropDownMenu/>);
+  const [charts,setCharts] = useState(<DropdownComponent data={data.default} />);
 
   const showStatewise = () => {
-  setCharts(<DropDownMenu/>)
+  setCharts(<StateWise data={data.default} />)
+  }
+  const showYearwise = () => {
+    setCharts(<DropdownComponent data={data.default} />)
+  }
+  const showCitywiseForState = () => {
+    setCharts(<CityWise data={data.default} />)
+  }
+  const showCitywise = () => {
+    setCharts(<WithoutState data={data.default} />)
   }
   return (
     <div style={{display:"flex"}}>
-      <Sidebar/>
+      <Sidebar showStatewise = {showStatewise} 
+      showYearwise={showYearwise}
+      showCitywiseForState={showCitywiseForState}
+      showCitywise={showCitywise}
+      />
       <AllCharts charts={charts}/>
     </div>
   );
