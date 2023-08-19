@@ -20,8 +20,7 @@ const Charts = () => {
   return (
     <div style={{display:"flex"}}>
       <Sidebar/>
-      <AllCharts>
-      </AllCharts>
+      <AllCharts charts={charts}/>
     </div>
   );
 };
