@@ -49,5 +49,8 @@
         top:0;
         left: 0;
         z-index: 150;
+        margin: 0;
+        width: 70vw;
+        height: 100vh;
     }
 }
