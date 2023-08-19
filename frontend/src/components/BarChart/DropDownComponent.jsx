@@ -1,14 +1,13 @@
 import { useState } from "react";
 import StateViz from "./StateViz";
 import "../../styles/Chart.css";
+
 // eslint-disable-next-line react/prop-types
 const DropDownComponent = ({ data }) => {
-  //   const years = Object.keys(data);
-
-  //   const [selectedYear, setSelectedYear] = useState("");
   const [selectedState, setSelectedState] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedElement, setSelectedElement] = useState("");
+  const [selectedNewEle, setSelectedNewEle] = useState("");
   const [selectedData, setSelectedData] = useState({
     year: "",
     state: "",
@@ -16,7 +15,6 @@ const DropDownComponent = ({ data }) => {
     element: "",
   });
 
-  //selectedYear &&
   let selectedYear = "2021";
   const states = data[selectedYear] ? Object.keys(data[selectedYear]) : [];
   const cities =
@@ -30,19 +28,7 @@ const DropDownComponent = ({ data }) => {
     data[selectedYear][selectedState][selectedCity]
       ? Object.keys(data[selectedYear][selectedState][selectedCity])
       : [];
-
-  //   const handleYearChange = (event) => {
-  //     setSelectedYear(event.target.value);
-  //     setSelectedState("");
-  //     setSelectedCity("");
-  //     setSelectedElement("");
-  //     setSelectedData((prev) => {
-  //       return {
-  //         ...prev,
-  //         year: selectedYear,
-  //       };
-  //     });
-  //   };
+  selectedCity && elements.push("AQI");
 
   const handleStateChange = (event) => {
     setSelectedState(event.target.value);
@@ -66,27 +52,59 @@ const DropDownComponent = ({ data }) => {
       };
     });
   };
-
   const handleElementChange = (event) => {
-    setSelectedElement(event.target.value);
-
-    if (selectedYear && selectedState && selectedCity && selectedElement) {
-      setSelectedData(
-        data[selectedYear][selectedState][selectedCity][selectedElement]
-      );
+    let elePm2 = "pm2.5";
+    let elePm10 = "pm10";
+    let eleSo2 = "So2";
+    let eleNo2 = "No2";
+    if (
+      event.target.value === "AQI" &&
+      selectedYear &&
+      selectedState &&
+      selectedCity
+    ) {
+      setSelectedNewEle("AQI");
+      if (data[selectedYear][selectedState][selectedCity][elePm10]) {
+        setSelectedElement(elePm10);
+        setSelectedData(
+          data[selectedYear][selectedState][selectedCity][selectedElement]
+        );
+      } else if (data[selectedYear][selectedState][selectedCity][elePm2]) {
+        setSelectedElement(elePm2);
+        setSelectedData(
+          data[selectedYear][selectedState][selectedCity][selectedElement]
+        );
+      } else if (data[selectedYear][selectedState][selectedCity][eleSo2]) {
+        setSelectedElement(eleSo2);
+        setSelectedData(
+          data[selectedYear][selectedState][selectedCity][selectedElement]
+        );
+      } else if (data[selectedYear][selectedState][selectedCity][eleNo2]) {
+        setSelectedElement(eleNo2);
+        setSelectedData(
+          data[selectedYear][selectedState][selectedCity][selectedElement]
+        );
+      }
+    } else {
+      setSelectedElement(event.target.value);
+      setSelectedNewEle(event.target.value);
+      if (selectedYear && selectedState && selectedCity && selectedElement) {
+        setSelectedData(
+          data[selectedYear][selectedState][selectedCity][selectedElement]
+        );
+      }
     }
     setSelectedData((prev) => {
       return {
         ...prev,
+
         element: selectedElement,
       };
     });
   };
   let allData = [];
   if (selectedCity && selectedState && selectedElement) {
-    // console.log(selectedCity, selectedState, selectedElement);
     for (let i = 2013; i < 2022; i++) {
-      //   let st = i;
       let ele = selectedElement;
       if (
         data[i] &&
@@ -105,15 +123,6 @@ const DropDownComponent = ({ data }) => {
   return (
     <div className="chartComp">
       <h1>Year Wise Comparison</h1>
-      {/* <label>Select Year:</label>
-      <select value={selectedYear} onChange={handleYearChange}>
-        {years.map((year) => (
-          <option key={year} value={year}>
-            {year}
-          </option>
-        ))}
-      </select> */}
-
       <label>Select State:</label>
       <select
         value={selectedState}
@@ -139,8 +148,9 @@ const DropDownComponent = ({ data }) => {
       </select>
 
       <label>Select Element:</label>
+
       <select
-        value={selectedElement}
+        value={selectedNewEle}
         onChange={handleElementChange}
         className="Element"
       >

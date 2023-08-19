@@ -7,6 +7,7 @@ const StateWise = ({ data }) => {
   const [selectedYear, setSelectedYear] = useState(null);
   const [selectedState, setSelectedState] = useState([]);
   const [selectedElement, setSelectedElement] = useState("");
+  const [selectedNewEle, setSelectedNewEle] = useState("");
 
   const handleYearChange = (selectedOption) => {
     setSelectedYear(selectedOption);
@@ -17,10 +18,30 @@ const StateWise = ({ data }) => {
   const handleStateChange = (selectedOptions) => {
     setSelectedState(selectedOptions.map((option) => option.value));
     setSelectedElement("");
+    setSelectedNewEle("");
   };
 
   const handleElementChange = (selectedOption) => {
-    setSelectedElement(selectedOption.value);
+    let elePm2 = "pm2.5";
+    let elePm10 = "pm10";
+    let eleSo2 = "So2";
+    let eleNo2 = "No2";
+
+    if (selectedOption.value === "AQI" && selectedYear && selectedState) {
+      setSelectedNewEle("AQI");
+      if (elements.includes(elePm10)) {
+        setSelectedElement(elePm10);
+      } else if (elements.includes(elePm2)) {
+        setSelectedElement(elePm2);
+      } else if (elements.includes(eleSo2)) {
+        setSelectedElement(eleSo2);
+      } else if (elements.includes(eleNo2)) {
+        setSelectedElement(eleNo2);
+      }
+    } else {
+      setSelectedNewEle(selectedOption.value);
+      setSelectedElement(selectedOption.value);
+    }
   };
 
   const years = Object.keys(data).map((year) => ({
@@ -41,6 +62,8 @@ const StateWise = ({ data }) => {
           ]
         )
       : [];
+
+  selectedYear && selectedState && elements.push("AQI");
   let alldata2 = [];
 
   if (selectedYear && selectedElement && selectedState) {
@@ -96,7 +119,7 @@ const StateWise = ({ data }) => {
         <>
           <label>Select Element:</label>
           <select
-            value={selectedElement}
+            value={selectedNewEle}
             onChange={(e) => handleElementChange({ value: e.target.value })}
             className="Element"
           >
@@ -110,14 +133,6 @@ const StateWise = ({ data }) => {
         </>
       )}
 
-      {selectedState.length > 0 && selectedElement && (
-        <div>
-          <h3>
-            Data for {selectedElement} in {selectedState.join(", ")} for{" "}
-            {selectedYear.label}:
-          </h3>
-        </div>
-      )}
       {alldata2 != null && <Viz2 data={alldata2} />}
     </div>
   );
