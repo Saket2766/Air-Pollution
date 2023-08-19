@@ -11,7 +11,7 @@ const Sidebar = ({showStatewise,showYearwise,showCitywiseForState,showCitywise})
 
   return (
     <>
-        <div className="hamburger"  onClick={toggleHidden}><img src="/hamburger.svg" alt="ham"/></div>
+        <div className="hamburger"  onClick={toggleHidden}><img className="menu-icon" src="/hamburger.svg" alt="ham"/></div>
         <nav className={`sidebar ${active? "":"hidden"}`}>
             <div className="sidebar-label">Visualizations</div>
             <div className="sidebar-item" onClick={showYearwise}>Year Wise Comparison</div>
