@@ -25,11 +25,21 @@ export default function Viz2(prop) {
             bottom: 5,
           }}
         >
+          {/* STATE WISE */}
           <CartesianGrid strokeDasharray="3 3" />
+          <Legend
+            className="Legend"
+            verticalAlign="top"
+            width={100}
+            layout="vertical"
+            align="right"
+            margin={{left:30}}
+            iconSize={20}
+          />
           <XAxis dataKey="state" />
           <YAxis />
           <Tooltip />
-          <Legend />
+
           <Bar dataKey="data" fill="#8884d8" />
         </BarChart>
       </ResponsiveContainer>

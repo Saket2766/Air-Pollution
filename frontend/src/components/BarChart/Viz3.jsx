@@ -26,11 +26,19 @@ export default function Viz3(prop) {
             bottom: 5,
           }}
         >
+          <Legend
+            className="Legend"
+            verticalAlign="top"
+            width={100}
+            layout="vertical"
+            align="right"
+            margin={{left:30}}
+            iconSize={20}
+          />
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="city" />
           <YAxis />
           <Tooltip />
-          <Legend />
           <Bar dataKey="data" fill="#8884d8" />
         </BarChart>
       </ResponsiveContainer>

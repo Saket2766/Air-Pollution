@@ -16,9 +16,9 @@
 }
 
 .chartComp {
-  background-color: black;
-  color: white;
-  /* color: black; */
+  /* background-color: black; */
+  /* color: white; */
+  color: black;
   display: flex;
   flex-direction: column;
   width: 40%;
@@ -26,7 +26,7 @@
   /* margin-top: 20px; */
   position: relative;
   left: 50%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .chartComp label {
