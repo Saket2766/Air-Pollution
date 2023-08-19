@@ -122,55 +122,61 @@ const DropDownComponent = ({ data }) => {
 
   return (
     <div className="chartComp">
-      <h1>Year Wise Comparison</h1>
-      <label>Select State:</label>
-      <select
-        value={selectedState}
-        onChange={handleStateChange}
-        className="State"
-      >
-        <option value="">Select</option>
-        {states.map((state) => (
-          <option key={state} value={state}>
-            {state}
-          </option>
-        ))}
-      </select>
+      <div>
+        <h1>Year Wise Comparison</h1>
+        <label>Select State:</label>
+        <select
+          value={selectedState}
+          onChange={handleStateChange}
+          className="State"
+        >
+          <option value="">Select</option>
+          {states.map((state) => (
+            <option key={state} value={state}>
+              {state}
+            </option>
+          ))}
+        </select>
 
-      <label>Select City:</label>
-      <select value={selectedCity} onChange={handleCityChange} className="City">
-        <option value="">Select</option>
-        {cities.map((city) => (
-          <option key={city} value={city}>
-            {city}
-          </option>
-        ))}
-      </select>
+        <label>Select City:</label>
+        <select
+          value={selectedCity}
+          onChange={handleCityChange}
+          className="City"
+        >
+          <option value="">Select</option>
+          {cities.map((city) => (
+            <option key={city} value={city}>
+              {city}
+            </option>
+          ))}
+        </select>
 
-      <label>Select Element:</label>
+        <label>Select Element:</label>
 
-      <select
-        value={selectedNewEle}
-        onChange={handleElementChange}
-        className="Element"
-      >
-        <option value="">Select</option>
-        {elements.map((element) => (
-          <option key={element} value={element}>
-            {element}
-          </option>
-        ))}
-      </select>
+        <select
+          value={selectedNewEle}
+          onChange={handleElementChange}
+          className="Element"
+        >
+          <option value="">Select</option>
+          {elements.map((element) => (
+            <option key={element} value={element}>
+              {element}
+            </option>
+          ))}
+        </select>
 
-      {selectedData && (
-        <div>
-          <h3>
-            Data for {selectedElement} in {selectedCity}, {selectedState},{" "}
-            {selectedYear}:
-          </h3>
-        </div>
-      )}
-      {allData != null && <StateViz data={allData} />}
+        {/* {selectedData && (
+          <div>
+            <h3>
+              Data for {selectedElement} in {selectedCity}, {selectedState},{" "}
+              {selectedYear}:
+            </h3>
+          </div>
+        )} */}
+      </div>
+      <div>{allData != null && <StateViz data={allData} />}</div>
     </div>
   );
 };

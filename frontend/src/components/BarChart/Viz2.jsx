@@ -8,13 +8,13 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import '../../styles/VizStyles.css';
+import "../../styles/VizStyles.css";
 
 export default function Viz2(prop) {
   const data = prop.data;
   return (
     <div className="chart">
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="150%" height="100%">
         <BarChart
           width={500}
           height={300}
@@ -31,10 +31,10 @@ export default function Viz2(prop) {
           <Legend
             className="Legend"
             verticalAlign="top"
-            width={100}
+            // width={1000}
             layout="vertical"
             align="right"
-            margin={{left:30}}
+            // margin={{left:1130}}
             iconSize={20}
           />
           <XAxis dataKey="state" />

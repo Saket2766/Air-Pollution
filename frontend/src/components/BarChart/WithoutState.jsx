@@ -74,42 +74,45 @@ const WithoutState = ({ data }) => {
 
   return (
     <div className="chartComp">
-      <h1>City Wise Comparison for all Cities</h1>
-      <label>Select Year:</label>
-      <Select
-        options={years}
-        onChange={handleYearChange}
-        value={selectedYear}
-        className="Year"
-      />
+      <div>
+        <h1>City Wise Comparison for all Cities</h1>
+        <label>Select Year:</label>
+        <Select
+          options={years}
+          onChange={handleYearChange}
+          value={selectedYear}
+          className="Year"
+        />
 
-      {selectedYear && (
-        <>
-          <label>Select Element:</label>
-          <Select
-            options={elements.map((element) => ({
-              value: element,
-              label: element,
-            }))}
-            onChange={handleElementChange}
-            value={selectedElement}
-            className="Element"
-          />
+        {selectedYear && (
+          <>
+            <label>Select Element:</label>
+            <Select
+              options={elements.map((element) => ({
+                value: element,
+                label: element,
+              }))}
+              onChange={handleElementChange}
+              value={selectedElement}
+              className="Element"
+            />
 
-          <label>Select Cities:</label>
-          <Select
-            options={cityOptions}
-            onChange={handleCityChange}
-            value={selectedCities}
-            isMulti
-            className="City"
-          />
-        </>
-      )}
-
-      {selectedCities.length > 0 && selectedElement && (
-        <div>{selectedData != null && <Viz3 data={selectedData} />}</div>
-      )}
+            <label>Select Cities:</label>
+            <Select
+              options={cityOptions}
+              onChange={handleCityChange}
+              value={selectedCities}
+              isMulti
+              className="City"
+            />
+          </>
+        )}
+      </div>
+      <div>
+        {selectedCities.length > 0 && selectedElement && (
+          <div>{selectedData != null && <Viz3 data={selectedData} />}</div>
+        )}
+      </div>
     </div>
   );
 };

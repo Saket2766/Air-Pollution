@@ -8,17 +8,17 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import '../../styles/VizStyles.css';
+import "../../styles/VizStyles.css";
 
 export default function Viz3(prop) {
   const data = prop.data;
 
   return (
     <div className="chart">
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="170%" height="100%">
         <BarChart
-          width={500}
-          height={300}
+          width={1500}
+          height={2300}
           data={data}
           margin={{
             top: 5,
@@ -33,7 +33,7 @@ export default function Viz3(prop) {
             width={100}
             layout="vertical"
             align="right"
-            margin={{left:30}}
+            margin={{ left: 30 }}
             iconSize={20}
           />
           <CartesianGrid strokeDasharray="3 3" />

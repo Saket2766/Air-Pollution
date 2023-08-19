@@ -1,14 +1,10 @@
-/* .Legend{
-    background-color: aqua;
-    padding: 5px;
-    margin: 5px;
-    color: wheat;
-} */
 @media only screen and(max-width:768px) {
-  .chart {
-    width: 10%;
+  .LineChartLine {
+    background-color: aliceblue;
   }
-  .LineChart{
-    width: 50%;
-  }
+}
+.chart {
+  position: relative;
+  /* left: -130%; */
+  top: 20%;
 }
