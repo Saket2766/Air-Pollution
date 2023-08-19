@@ -7,7 +7,7 @@ import StateWise from "../components/BarChart/StateWise";
 import CityWise from "../components/BarChart/CityWise";
 import WithoutState from "../components/BarChart/WithoutState";
 
-import "../styles/Charts.css";
+// import "../styles/Charts.css";
 
 
 const Charts = () => {

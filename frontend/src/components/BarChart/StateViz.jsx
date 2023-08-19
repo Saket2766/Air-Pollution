@@ -37,10 +37,8 @@ const StateViz = (prop) => {
             className="Legend"
             verticalAlign="top"
             width={100}
-            // height={}
             layout="vertical"
             align="right"
-            // margin={{right:120}}
             iconSize={30}
           />
           <XAxis dataKey="year" />

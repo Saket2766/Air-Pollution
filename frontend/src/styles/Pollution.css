@@ -65,14 +65,11 @@
     display: flex;
     flex-direction: column;
     width: 768px;
-
-    /* height: 2vw; */
     text-align: center;
   }
   .Pollution {
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     width: 100%;
   }
   .Pollution p {
@@ -81,7 +78,6 @@
     padding: 0px 20px;
   }
   .Pollution h2 {
-    /* margin-left: -170px; */
     text-align: center;
   }
 }
