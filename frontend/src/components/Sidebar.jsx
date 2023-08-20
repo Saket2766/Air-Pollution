@@ -13,6 +13,27 @@ const Sidebar = ({
     setActive(!active);
   };
 
+  const clickYearwise = () => {
+    showYearwise();
+    toggleHidden();
+  }
+
+  const clickStatewise = () => {
+    showStatewise();
+    toggleHidden();
+  }
+
+  const clickCitywiseForState = () => {
+    showCitywiseForState();
+    toggleHidden();
+  }
+
+  const clickCitywise = () => {
+    showCitywise();
+    toggleHidden();
+  }
+
+
   return (
     <>
       <div className="hamburger" onClick={toggleHidden}>
@@ -20,16 +41,16 @@ const Sidebar = ({
       </div>
       <nav className={`sidebar ${active ? "" : "hidden"}`}>
         <div className="sidebar-label">Visualizations</div>
-        <div className="sidebar-item" onClick={showYearwise}>
+        <div className="sidebar-item" onClick={clickYearwise}>
           Year Wise Comparison
         </div>
-        <div className="sidebar-item" onClick={showStatewise}>
+        <div className="sidebar-item" onClick={clickStatewise}>
           Statewise Comparison
         </div>
-        <div className="sidebar-item" onClick={showCitywiseForState}>
+        <div className="sidebar-item" onClick={clickCitywiseForState}>
           Citywise Comparison for Each State
         </div>
-        <div className="sidebar-item" onClick={showCitywise}>
+        <div className="sidebar-item" onClick={clickCitywise}>
           City wise Comparison
         </div>
       </nav>
