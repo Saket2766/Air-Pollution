@@ -66,7 +66,7 @@ const StateWise = ({ data }) => {
   selectedYear && selectedState && elements.push("AQI");
   let alldata2 = [];
 
-  if (selectedYear && selectedElement && selectedState) {
+  if (selectedYear && selectedElement && selectedState && selectedNewEle != "AQI") {
     selectedState.forEach((st) => {
       let sum = 0;
       let cnt = 0;
@@ -88,6 +88,53 @@ const StateWise = ({ data }) => {
       });
     });
   }
+  else if(selectedYear && selectedElement && selectedState && selectedNewEle == "AQI" ){
+    let reqpm10 = 150;
+    let reqpm2 = 60;
+    let reqso2 = 50;
+    let reqno2 = 40;
+    selectedState.forEach((st) => {
+      let sum = 0;
+      let cnt = 0;
+      let median = 0;
+    Object.keys(data[selectedYear.value][st]).forEach((city) => {
+      if (
+        data[selectedYear.value][st] &&
+        data[selectedYear.value][st][city][selectedElement]
+      )
+        sum += data[selectedYear.value][st][city][selectedElement];
+      cnt++;
+    });
+
+    median = sum / cnt;
+    if(selectedElement == "pm2.5"){
+      alldata2.push({
+        state: st,
+        data: Math.trunc(((median)/reqpm2)*100),
+      });
+    }
+    else if(selectedElement == "pm10"){
+      alldata2.push({
+        state: st,
+        data: Math.trunc(((median)/reqpm10)*100),
+      });
+    }
+    else if(selectedElement == "So2"){
+      alldata2.push({
+        state: st,
+        data: Math.trunc(((median)/reqso2)*100),
+      });
+    }
+    else if(selectedElement == "No2"){
+      alldata2.push({
+        state: st,
+        data: Math.trunc(((median)/reqno2)*100),
+      });
+    }
+    });
+  }
+
+  
 
   return (
     <div className="chartComp">

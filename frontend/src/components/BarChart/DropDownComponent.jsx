@@ -61,7 +61,7 @@ const DropDownComponent = ({ data }) => {
     }
   };
   let allData = [];
-  if (selectedCity && selectedState && selectedElement) {
+  if (selectedCity && selectedState && selectedElement && selectedNewEle != "AQI") {
     for (let i = 2013; i < 2022; i++) {
       let ele = selectedElement;
       if (
@@ -76,6 +76,45 @@ const DropDownComponent = ({ data }) => {
       }
     }
     console.log(allData);
+  }
+  else if(selectedCity && selectedElement && selectedElement && selectedNewEle=="AQI"){
+    let reqpm10 = 150;
+    let reqpm2 = 60;
+    let reqso2 = 50;
+    let reqno2 = 40;
+    for (let i = 2013; i < 2022; i++) {
+      let ele = selectedElement;
+      if (
+        data[i] &&
+        data[i][selectedState] &&
+        data[i][selectedState][selectedCity]
+      ) {
+        if(ele=="pm10")
+        allData.push({
+          year: i,
+          data: ((data[i][selectedState][selectedCity][ele])/reqpm10)*100,
+        });
+        else if(ele=="pm2.5"){
+          allData.push({
+            year: i,
+            data: ((data[i][selectedState][selectedCity][ele])/reqpm2)*100,
+          });
+        }
+        else if(ele=="So2"){
+          allData.push({
+            year: i,
+            data: ((data[i][selectedState][selectedCity][ele])/reqso2)*100,
+          });
+        }
+        else if(ele=="No2"){
+          allData.push({
+            year: i,
+            data: ((data[i][selectedState][selectedCity][ele])/reqno2)*100,
+          });
+        }
+      }
+    }
+    // console.log(allData);
   }
 
   return (

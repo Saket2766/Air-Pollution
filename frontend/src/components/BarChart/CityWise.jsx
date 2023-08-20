@@ -93,8 +93,10 @@ const StateWise = ({ data }) => {
     selectedYear &&
     selectedElement &&
     selectedState &&
-    selectedCities.length > 0
+    selectedCities.length > 0 &&
+    selectedNewEle != "AQI"
   ) {
+
     selectedCities.forEach((city) => {
       if (
         data[selectedYear.value][selectedState.value][city.value] &&
@@ -113,7 +115,54 @@ const StateWise = ({ data }) => {
       }
     });
   }
-  console.log(selectedNewEle);
+  else if(selectedYear && selectedElement && selectedState && selectedNewEle == "AQI" && selectedCities.length > 0 ){
+    let reqpm10 = 150;
+    let reqpm2 = 60;
+    let reqso2 = 50;
+    let reqno2 = 40;
+    selectedCities.forEach((city) => {
+      if (
+        data[selectedYear.value][selectedState.value][city.value] &&
+        data[selectedYear.value][selectedState.value][city.value][
+          selectedElement
+        ]
+      ) {
+        let concentration =
+          data[selectedYear.value][selectedState.value][city.value][
+            selectedElement
+          ];
+        if(selectedElement == "pm2.5"){
+          concentration = (concentration / reqpm2) * 100;
+          alldata3.push({
+            city: city.label,
+            data: concentration,
+          });
+        }
+        else if(selectedElement == "pm10"){
+          concentration = (concentration / reqpm10)*100;
+          alldata3.push({
+            city: city.label,
+            data: concentration,
+          });
+        }   
+        else if(selectedElement == "So2"){
+          concentration = (concentration / reqso2) * 100;
+          alldata3.push({
+            city: city.label,
+            data: concentration,
+          });
+        } 
+        else if(selectedElement == "No2"){
+          concentration = (concentration / reqno2) * 100;
+          alldata3.push({
+            city: city.label,
+            data: concentration,
+          });
+        } 
+      }
+    });
+  }
+
   return (
     <div className="chartComp">
       <div>
