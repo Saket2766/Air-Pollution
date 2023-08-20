@@ -2,8 +2,10 @@
   .LineChartLine {
     background-color: aliceblue;
   }
+  .chart {
+    flex-grow: 1;
+    width: 100%;
+    background-color: black; 
+  }
 }
-/* .chart {
-  width: 90vw;
-  background-color: black; 
-} */
+

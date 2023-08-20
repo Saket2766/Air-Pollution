@@ -29,14 +29,14 @@
 
 @media only screen and (max-width: 768px) {
   .chartComp {
-    width: 100%;
+    width: 100vw;
     padding: 10px;
     left: 0;
     font-size: 2rem;
     height: 200vh;
     display: flex;
     flex-direction: column;
-    
+
   }
 
   .Year,
@@ -48,5 +48,9 @@
     margin: 5px auto;
     height: 20vw;
     font-size: 1.3rem;
+  }
+
+  .chart-container{
+    min-width: 80vw;
   }
 }
