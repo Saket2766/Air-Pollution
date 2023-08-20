@@ -15,13 +15,13 @@ export default function Viz3(prop) {
 
   return (
     <div className="chart">
-      <ResponsiveContainer width="170%" height="100%">
+      <ResponsiveContainer width="200%" height="170%" >
         <BarChart
           width={1500}
           height={2300}
           data={data}
           margin={{
-            top: 5,
+            top: 100,
             right: 30,
             left: 20,
             bottom: 5,

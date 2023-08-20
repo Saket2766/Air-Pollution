@@ -16,6 +16,12 @@
   height: 30px;
   margin-bottom: 30px;
 }
+.chartComp select {
+  border: 1px solid rgb(188, 188, 188);
+  height: 40px;
+  border-radius: 5px;
+  font-size: 1.1rem;
+}
 
 .Element_chart {
   border-radius: 7px;
@@ -28,6 +34,7 @@
     left: 0;
     font-size: 2rem;
     height: 200vh;
+    display: flex;
     flex-direction: column;
     
   }

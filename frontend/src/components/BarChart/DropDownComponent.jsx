@@ -83,41 +83,46 @@ const DropDownComponent = ({ data }) => {
       <div>
         <h1>Year Wise Comparison</h1>
         <label>Select State:</label>
+        <br></br>
         <select
           value={selectedState}
           onChange={handleStateChange}
           className="State"
+          // placeholder="selecdsfs"
         >
-          <option value="">Select</option>
+          <option value="">Select...</option>
           {states.map((state) => (
             <option key={state} value={state}>
               {state}
             </option>
           ))}
         </select>
+        <br></br>
 
         <label>Select City:</label>
+        <br></br>
         <select
           value={selectedCity}
           onChange={handleCityChange}
           className="City"
         >
-          <option value="">Select</option>
+          <option value="">Select...</option>
           {cities.map((city) => (
             <option key={city} value={city}>
               {city}
             </option>
           ))}
         </select>
+        <br></br>
 
         <label>Select Element:</label>
-
+        <br></br>
         <select
           value={selectedNewEle}
           onChange={handleElementChange}
           className="Element"
         >
-          <option value="">Select</option>
+          <option value="">Select...</option>
           {elements.map((element) => (
             <option key={element} value={element}>
               {element}

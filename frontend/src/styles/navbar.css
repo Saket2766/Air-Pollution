@@ -10,13 +10,13 @@ header {
   padding: 0px 40px;
   height: 7vh;
   z-index: 100;
+  border: 1px solid black;
 }
-.Logo{
+.Logo {
   text-decoration: none;
   color: black;
 }
-.logo{
-  
+.logo {
   margin: 10px 0px;
 }
 
@@ -44,6 +44,7 @@ nav a {
   header {
     height: max-content;
     position: relative;
+    border: 2px solid black;
   }
   header nav ul {
     justify-content: center;
