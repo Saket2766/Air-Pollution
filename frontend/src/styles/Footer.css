@@ -42,10 +42,5 @@ footer .logos {
     width: 15vw;
     height: 15vw;
   }
-  * {
-    text-align: center;
-    align-items: center;
-    overflow-x: hidden;
-    width: 100%;
-  }
+  
 }
