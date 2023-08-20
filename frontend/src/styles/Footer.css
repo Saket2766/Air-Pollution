@@ -46,6 +46,6 @@ footer .logos {
     text-align: center;
     align-items: center;
     overflow-x: hidden;
-    width: 768px;
+    width: 100%;
   }
 }

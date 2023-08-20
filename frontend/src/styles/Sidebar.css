@@ -55,7 +55,7 @@
     z-index: 150;
     margin: 0;
     width: 100vw;
-    height: 60vh;
+    height: max-content;
     border-radius: 10px;
   }
   .sidebar .sidebar-label {
