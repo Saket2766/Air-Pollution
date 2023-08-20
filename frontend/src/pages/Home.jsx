@@ -15,7 +15,7 @@ const Home = () => {
       <Carousel slides={slides} />
       <AboutProject />
       <ProjectInfo />
-      <AboutMe />
+      <AboutMe />/
     </div>
   );
 };
