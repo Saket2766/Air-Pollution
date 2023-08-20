@@ -35,8 +35,8 @@
   .City,
   .State,
   .Element {
-    width: 100%;
-    margin-bottom: 20px;
+    width: 80%;
+    margin: 5px auto;
     height: 20vw;
     font-size: 1.3rem;
   }
