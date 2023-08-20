@@ -39,7 +39,7 @@
     position: fixed;
     height: 7vh;
     width: 7vh;
-    top: 0;
+    top: 1vh;
     left: 0;
     z-index: 200;
     overflow: hidden;
