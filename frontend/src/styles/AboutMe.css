@@ -53,12 +53,15 @@
   text-decoration-line: underline;
 }
 @media only screen and (max-width: 768px) {
-  .AboutMe {
-    /* width: 200%; */
-  }
   .AboutMeContent {
     width: 50%;
   }
+
+  .AboutMeContent img{
+    height: 90vw;
+    width: 90vw;
+  }
+
   .AboutMeContent p {
     width: 200%;
     font-size: 1.5rem;
