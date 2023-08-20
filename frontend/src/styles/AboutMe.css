@@ -53,6 +53,7 @@
   text-decoration-line: underline;
 }
 @media only screen and (max-width: 768px) {
+
   .AboutMeContent {
     width: 50%;
   }
