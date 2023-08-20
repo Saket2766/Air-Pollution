@@ -19,9 +19,11 @@
 }
 .chartComp select {
   border: 1px solid rgb(188, 188, 188);
+  background-color: transparent;
   height: 40px;
   border-radius: 5px;
   font-size: 1.1rem;
+  text-align: center;
 }
 
 .Element_chart {
