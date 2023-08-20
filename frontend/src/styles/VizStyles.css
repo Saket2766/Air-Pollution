@@ -4,7 +4,8 @@
   }
 }
 .chart {
-  position: relative;
+  width: 90vw;
+  background-color: black;
   /* left: -130%; */
   top: 20%;
 }
