@@ -38,7 +38,7 @@
   justify-content: flex-end;
   align-items: center;
   flex-shrink: 0;
-  /* margin: 50px; */
+  margin: 50px;
   float: left;
   border-radius: 10px;
 }
@@ -55,11 +55,25 @@
 @media only screen and (max-width: 768px) {
   .AboutMeContent {
     width: 50%;
+    text-align: center;
+  }
+  .AboutMe{
+    text-align: center;
+  }
+  .AboutMe h1{
+    margin-left: -10px;
+  }
+  .AboutMe a{
+    text-align: center;
+    font-size: 1.4rem;
+    margin-left: 70px;
   }
 
   .AboutMeContent img{
     height: 90vw;
     width: 90vw;
+    margin: 20px;
+
   }
 
   .AboutMeContent p {
