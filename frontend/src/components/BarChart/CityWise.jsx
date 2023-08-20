@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Select from "react-select";
-import Viz3 from "./Viz3";
+import Viz3State from "./Viz3State";
 import "../../styles/Chart.css";
 
 // eslint-disable-next-line react/prop-types
@@ -148,6 +148,7 @@ const StateWise = ({ data }) => {
                   onChange={handleElementChange}
                   className="Element"
                 /> */}
+                <br></br>
                 <select
                   value={selectedNewEle}
                   onChange={(e) =>
@@ -162,6 +163,7 @@ const StateWise = ({ data }) => {
                     </option>
                   ))}
                 </select>
+                <br></br>
 
                 <label>Select Cities:</label>
                 <Select
@@ -176,7 +178,7 @@ const StateWise = ({ data }) => {
           </>
         )}
       </div>
-      <div>{alldata3 != null && <Viz3 data={alldata3} />}</div>
+      <div>{alldata3 != null && <Viz3State data={alldata3} />}</div>
     </div>
   );
 };

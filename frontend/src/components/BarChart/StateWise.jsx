@@ -119,12 +119,13 @@ const StateWise = ({ data }) => {
         {selectedState.length > 0 && (
           <>
             <label>Select Element:</label>
+            <br></br>
             <select
               value={selectedNewEle}
               onChange={(e) => handleElementChange({ value: e.target.value })}
               className="Element"
             >
-              <option value="">Select</option>
+              <option value="">Select...</option>
               {elements.map((element) => (
                 <option key={element} value={element}>
                   {element}

@@ -106,6 +106,7 @@ const WithoutState = ({ data }) => {
         {selectedYear && (
           <>
             <label>Select Element:</label>
+            <br></br>
             <select
               value={selectedNewEle}
               onChange={(e) => handleElementChange({ value: e.target.value })}
@@ -118,6 +119,7 @@ const WithoutState = ({ data }) => {
                 </option>
               ))}
             </select>
+            <br></br>
 
             <label>Select Cities:</label>
             <Select
