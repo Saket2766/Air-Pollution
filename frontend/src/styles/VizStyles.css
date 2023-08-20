@@ -1,7 +1,5 @@
-@media only screen and(max-width:768px) {
-  .LineChartLine {
-    background-color: aliceblue;
-  }
+@media only screen and (max-width:768px) {
+  
   .chart {
     width: 100%;
     background-color: black; 

@@ -135,7 +135,7 @@ const StateWise = ({ data }) => {
           </>
         )}
       </div>
-      <div className="chart-container">{alldata2 != null && <Viz2 data={alldata2} />}</div>
+      <div>{alldata2 != null && <Viz2 data={alldata2} />}</div>
     </div>
   );
 };
