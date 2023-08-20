@@ -71,7 +71,8 @@ const WithoutState = ({ data }) => {
   }
 
   let selectedData = [];
-  if (selectedYear && selectedElement && selectedCities.length > 0) {
+  if (selectedYear && selectedElement && selectedCities.length > 0 && selectedNewEle != "AQI") {
+    console.log("From first")
     selectedCities.forEach((city) => {
       const stateKeys = Object.keys(data[selectedYear.value]);
       for (let i = 0; i < stateKeys.length; i++) {
@@ -90,6 +91,57 @@ const WithoutState = ({ data }) => {
       }
     });
   }
+  else if(selectedYear && selectedElement && selectedNewEle == "AQI" && selectedCities.length > 0){
+    const reqpm10 = 150;
+    const reqpm2 = 60;
+    const reqso2 = 50;
+    const reqno2 = 40;
+    selectedCities.forEach((city) => {
+      let ele = selectedElement;
+      const stateKeys = Object.keys(data[selectedYear.value]);
+      for (let i = 0; i < stateKeys.length; i++) {
+        const state = stateKeys[i];
+        if (data[selectedYear.value][state][city.value]) {
+          let concentration =
+            data[selectedYear.value][state][city.value][selectedElement];
+          if (concentration) {
+            if(ele == "pm2.5"){
+              concentration = (concentration / reqpm2)*100;
+              selectedData.push({
+                city: city.label,
+                data: concentration,
+              });
+            }
+            else if(ele == "pm10"){
+              concentration = (concentration / reqpm10)*100;
+              selectedData.push({
+                city: city.label,
+                data: concentration,
+              });
+              // console.log(data)
+            }
+            else if(selectedElement == "So2"){
+              concentration = (concentration / reqso2) * 100;
+              selectedData.push({
+                city: city.label,
+                data: concentration,
+              });
+            }
+            else if(selectedElement == "No2"){
+              concentration = (concentration / reqno2) * 100;
+              selectedData.push({
+                city: city.label,
+                data: concentration,
+              });
+            }
+            break;
+          }
+        }
+      }
+    });
+    
+  }
+  // console.log(selectedData)
 
   return (
     <div className="chartComp">
