@@ -20,13 +20,13 @@ const StateViz = (prop) => {
 
   return (
     <div className="chart">
-      <ResponsiveContainer width="250%" height="150%" className="LineChart">
+      <ResponsiveContainer width="250%" height="170%" className="LineChart">
         <LineChart
           width={1000}
           height={800}
           data={data}
           margin={{
-            top: 5,
+            top: 105,
             right: 30,
             left: 20,
             bottom: 5,

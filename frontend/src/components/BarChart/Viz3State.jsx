@@ -15,13 +15,13 @@ import {
   
     return (
       <div className="chart">
-        <ResponsiveContainer width="200%" height="150%" >
+        <ResponsiveContainer width="200%" height="170%" >
           <BarChart
             width={1500}
             height={2300}
             data={data}
             margin={{
-              top: 1,
+              top: 100,
               right: 30,
               left: 20,
               bottom: 5,

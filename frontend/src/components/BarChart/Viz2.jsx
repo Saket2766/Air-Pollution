@@ -14,13 +14,13 @@ export default function Viz2(prop) {
   const data = prop.data;
   return (
     <div className="chart">
-      <ResponsiveContainer width="200%" height="130%">
+      <ResponsiveContainer width="210%" height="160%">
         <BarChart
           width={500}
           height={300}
           data={data}
           margin={{
-            top: 5,
+            top: 105,
             right: 30,
             left: 20,
             bottom: 5,
