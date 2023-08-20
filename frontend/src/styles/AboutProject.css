@@ -52,11 +52,19 @@
   .glass {
     width: 100%;
     margin: 10px 30px;
-    height: max-content;
+    height: 100%;
   }
   .glass p {
     text-align: center;
     justify-content: center;
-    padding: 3px 60px;
+    padding: 3px 0px;
+  }
+  .about {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+  }
+  .title-container{
+    text-align: center;
   }
 }

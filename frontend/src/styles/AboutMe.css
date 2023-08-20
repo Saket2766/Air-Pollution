@@ -5,6 +5,9 @@
   color: black;
   width: 100%;
 }
+.AboutMeContent {
+  width: 100%;
+}
 
 .AboutMe h1 {
   color: var(--base-black, #23242a);
@@ -18,7 +21,7 @@
   text-align: center;
   margin: 1px 0px 0px -50px;
 }
-.AboutMe p {
+.AboutMeContent p {
   color: var(--base-black, #23242a);
   font-family: Roboto;
   font-size: 36.006px;
@@ -27,7 +30,7 @@
   line-height: 120%; /* 43.207px */
   letter-spacing: -0.36px;
 }
-.AboutMe img {
+.AboutMeContent img {
   display: flex;
   width: 400px;
   height: 400.292px;
@@ -35,11 +38,11 @@
   justify-content: flex-end;
   align-items: center;
   flex-shrink: 0;
-  margin: 50px;
+  /* margin: 50px; */
   float: left;
   border-radius: 10px;
 }
-.AboutMe a {
+.AboutMeContent a {
   color: var(--base-primary, #0e6fff);
   font-family: Roboto;
   font-size: 27.004px;
@@ -50,14 +53,15 @@
   text-decoration-line: underline;
 }
 @media only screen and (max-width: 768px) {
-  .AboutMe{
-    display: flex;
-    flex-direction: column;
+  .AboutMe {
+    /* width: 200%; */
   }
-  .AboutMe img{
-    /* align-items: center; */
-   justify-content: center;
-   margin-left: 150px;
-
+  .AboutMeContent {
+    width: 50%;
+  }
+  .AboutMeContent p {
+    width: 200%;
+    font-size: 1.5rem;
+    height: min-content;
   }
 }

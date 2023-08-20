@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../styles/AboutProject.css';
 
 const Carousel = ({ slides }) => {
   const [slideIndex, setSlideIndex] = useState(0);

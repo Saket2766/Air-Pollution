@@ -3,6 +3,9 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.HomeMain{
+  width: 100%;
+}
 
 .slide {
   display: flex;

@@ -11,12 +11,12 @@ const Home = () => {
   ];
 
   return (
-    <>
+    <div className="HomeMain">
       <Carousel slides={slides} />
       <AboutProject />
       <ProjectInfo />
       <AboutMe />
-    </>
+    </div>
   );
 };
 
