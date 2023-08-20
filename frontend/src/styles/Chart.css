@@ -20,7 +20,7 @@
 .chartComp select {
   border: 1px solid rgb(188, 188, 188);
   background-color: transparent;
-  color: #808080;
+  color: black;
   height: 40px;
   border-radius: 5px;
   font-size: 1.1rem;
