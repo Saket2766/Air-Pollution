@@ -10,7 +10,7 @@ header {
   padding: 0px 40px;
   height: 7vh;
   z-index: 100;
-  border: 1px solid black;
+  border-bottom: 1px solid black;
 }
 .Logo {
   text-decoration: none;
