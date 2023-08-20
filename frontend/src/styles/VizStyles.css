@@ -1,10 +1,13 @@
-
+.chart {
+  min-height: 90%;
+  min-width: 90%;
+}
 
 @media only screen and (max-width:768px) {
   
   .chart {
-    width: 100%;
-    background-color: black; 
-  }
+    min-width: 100%;
+    min-height: 40%;
+  }; 
 }
 

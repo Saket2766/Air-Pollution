@@ -130,7 +130,7 @@ const DropDownComponent = ({ data }) => {
           ))}
         </select>
       </div>
-      <div>{allData != null && <StateViz data={allData} />}</div>
+      <div className="chart-container">{allData != null && <StateViz data={allData} />}</div>
     </div>
   );
 };

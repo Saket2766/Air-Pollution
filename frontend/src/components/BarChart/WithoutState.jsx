@@ -134,7 +134,7 @@ const WithoutState = ({ data }) => {
       </div>
       <div>
         {selectedCities.length > 0 && selectedElement && (
-          <div>{selectedData != null && <Viz3 data={selectedData} />}</div>
+          <div className="chart-container">{selectedData != null && <Viz3 data={selectedData} />}</div>
         )}
       </div>
     </div>

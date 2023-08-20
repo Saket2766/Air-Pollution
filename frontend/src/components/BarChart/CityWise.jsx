@@ -178,7 +178,7 @@ const StateWise = ({ data }) => {
           </>
         )}
       </div>
-      <div>{alldata3 != null && <Viz3State data={alldata3} />}</div>
+      <div className="chart-container">{alldata3 != null && <Viz3State data={alldata3} />}</div>
     </div>
   );
 };

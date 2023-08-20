@@ -15,7 +15,7 @@ export default function Viz3(prop) {
 
   return (
     <div className="chart">
-      <ResponsiveContainer width="200%" height="170%" >
+      <ResponsiveContainer>
         <BarChart
           width={1500}
           height={2300}

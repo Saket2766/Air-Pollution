@@ -20,7 +20,7 @@ const StateViz = (prop) => {
 
   return (
     <div className="chart">
-      <ResponsiveContainer width="250%" height="170%" className="LineChart">
+      <ResponsiveContainer className="LineChart">
         <LineChart
           width={1000}
           height={800}

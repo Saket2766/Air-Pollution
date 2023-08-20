@@ -27,6 +27,10 @@
   border-radius: 7px;
 }
 
+.chart-container{
+  flex-grow: 1;
+}
+
 @media only screen and (max-width: 768px) {
   .chartComp {
     width: 100vw;
