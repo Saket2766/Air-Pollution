@@ -61,9 +61,13 @@
   .sidebar .sidebar-label {
     font-size: 2rem;
   }
+  .sidebar-label{
+    text-align: center;
+  }
   .sidebar-item {
     font-size: 20px;
     padding: 20px 60px;
     border-bottom: 1px solid #495057;
+    border-radius: 0px;
   }
 }
