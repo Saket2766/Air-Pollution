@@ -3,7 +3,6 @@
     background-color: aliceblue;
   }
   .chart {
-    flex-grow: 1;
     width: 100%;
     background-color: black; 
   }
