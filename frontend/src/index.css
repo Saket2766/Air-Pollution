@@ -32,3 +32,9 @@ body {
 .yl {
   background-color: black;
 }
+
+@media only screen and (max-width: 768px) {
+  .App{
+    width: 100vw;
+  }
+}

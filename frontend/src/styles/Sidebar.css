@@ -55,14 +55,14 @@
     z-index: 150;
     margin: 0;
     width: 100vw;
-    height: 65vh;
+    height: 60vh;
     border-radius: 10px;
   }
   .sidebar .sidebar-label {
     font-size: 2rem;
   }
   .sidebar-item {
-    font-size: 30px;
+    font-size: 20px;
     padding: 20px 60px;
     border-bottom: 1px solid #495057;
   }
