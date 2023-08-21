@@ -3,6 +3,7 @@ import AboutMe from "../components/AboutMe";
 import ProjectInfo from "../components/ProjectInfo";
 import "../styles/home.css";
 import AboutProject from "../components/AboutProject";
+import Navbar from "../components/Navbar";
 const Home = () => {
   const slides = [
     { url: "/Slide1.png", title: "AIR\nPOLLUTION" },
@@ -12,6 +13,7 @@ const Home = () => {
 
   return (
     <div className="HomeMain">
+      <Navbar />
       <Carousel slides={slides} />
       <AboutProject />
       <ProjectInfo />

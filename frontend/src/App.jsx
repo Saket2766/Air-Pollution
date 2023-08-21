@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Charts from "./pages/Charts";
 import Footer from "./components/Footer";
@@ -9,8 +9,6 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Navbar />
-
         <div className="content">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -24,6 +22,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;

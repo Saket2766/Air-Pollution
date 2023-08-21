@@ -1,3 +1,14 @@
+.container {
+  /* display: flex; */
+  border: 2px solid;
+  border-color: black;
+  height: 99%;
+  border-radius: 10px;
+  margin-left: 3px;
+  margin-top: 4px;
+
+  /* margin-bottom: 8px; */
+}
 .chartComp {
   color: black;
   display: flex;
@@ -6,9 +17,26 @@
   width: 100%;
   padding: 10px;
   position: relative;
-  height: 43vw;
+  height: 43vh;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  font-size: 32px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  font-family: poppins;
 }
 
+/* .form {
+  border: 1px solid;
+  height: max-content;
+  padding: 15px;
+} */
+.sel {
+  font-family: poppins;
+}
 .Year,
 .City,
 .State,
@@ -31,7 +59,7 @@
   border-radius: 7px;
 }
 
-.chart-container{
+.chart-container {
   flex-grow: 1;
 }
 

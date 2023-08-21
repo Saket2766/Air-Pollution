@@ -4,10 +4,11 @@
   margin: 0px 10px;
 }
 footer {
-  background: #99cc02;
+  background: white;
   color: black;
   display: flex;
   overflow-x: hidden;
+  border-top: 2px solid;
 }
 footer h3 {
   margin-left: 10vh;

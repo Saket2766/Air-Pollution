@@ -1,10 +1,15 @@
 import { useState } from "react";
 import "../styles/Sidebar.css";
+import { Lightbulb } from "lucide-react";
 
 const Sidebar = ({
+  // eslint-disable-next-line react/prop-types
   showStatewise,
+  // eslint-disable-next-line react/prop-types
   showYearwise,
+  // eslint-disable-next-line react/prop-types
   showCitywiseForState,
+  // eslint-disable-next-line react/prop-types
   showCitywise,
 }) => {
   const [active, setActive] = useState(false);
@@ -16,31 +21,37 @@ const Sidebar = ({
   const clickYearwise = () => {
     showYearwise();
     toggleHidden();
-  }
+  };
 
   const clickStatewise = () => {
     showStatewise();
     toggleHidden();
-  }
+  };
 
   const clickCitywiseForState = () => {
     showCitywiseForState();
     toggleHidden();
-  }
+  };
 
   const clickCitywise = () => {
     showCitywise();
     toggleHidden();
-  }
-
+  };
 
   return (
     <>
       <div className="hamburger" onClick={toggleHidden}>
-        <img className="menu-icon" src={`${active?"/cross.svg":"/hamburger.svg"}`} alt="ham" />
+        <img
+          className="menu-icon"
+          src={`${active ? "/cross.svg" : "/hamburger.svg"}`}
+          alt="ham"
+        />
       </div>
       <nav className={`sidebar ${active ? "" : "hidden"}`}>
-        <div className="sidebar-label">Visualizations</div>
+        <div className="sidebar-label">
+          <Lightbulb />
+          Visualizations
+        </div>
         <div className="sidebar-item" onClick={clickYearwise}>
           Year Wise Comparison
         </div>

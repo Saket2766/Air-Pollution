@@ -1,11 +1,7 @@
-import DropDownMenu from "../components/DropDownMenu";
+// import DropDownMenu from "../components/DropDownMenu";
 
-const AllCharts = ({charts}) => {
-  return (
-    <div style={{flexGrow:1}}>
-      <h1>All Charts</h1>
-      {charts}
-    </div>
-  );
+// eslint-disable-next-line react/prop-types
+const AllCharts = ({ charts }) => {
+  return <div style={{ flexGrow: 1 }}>{charts}</div>;
 };
 export default AllCharts;

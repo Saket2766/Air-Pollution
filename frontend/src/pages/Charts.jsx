@@ -9,33 +9,34 @@ import WithoutState from "../components/BarChart/WithoutState";
 
 // import "../styles/Charts.css";
 
-
 const Charts = () => {
-  const [charts,setCharts] = useState(<DropdownComponent data={data.default} />);
+  const [charts, setCharts] = useState(
+    <DropdownComponent data={data.default} />
+  );
 
   const showStatewise = () => {
-  setCharts(<StateWise data={data.default} />)
-  }
+    setCharts(<StateWise data={data.default} />);
+  };
   const showYearwise = () => {
-    setCharts(<DropdownComponent data={data.default} />)
-  }
+    setCharts(<DropdownComponent data={data.default} />);
+  };
   const showCitywiseForState = () => {
-    setCharts(<CityWise data={data.default} />)
-  }
+    setCharts(<CityWise data={data.default} />);
+  };
   const showCitywise = () => {
-    setCharts(<WithoutState data={data.default} />)
-  }
+    setCharts(<WithoutState data={data.default} />);
+  };
   return (
-    <div style={{display:"flex"}}>
-      <Sidebar showStatewise = {showStatewise} 
-      showYearwise={showYearwise}
-      showCitywiseForState={showCitywiseForState}
-      showCitywise={showCitywise}
+    <div style={{ display: "flex", height: "100%" }}>
+      <Sidebar
+        showStatewise={showStatewise}
+        showYearwise={showYearwise}
+        showCitywiseForState={showCitywiseForState}
+        showCitywise={showCitywise}
       />
-      <AllCharts charts={charts}/>
+      <AllCharts charts={charts} />
     </div>
   );
 };
 
 export default Charts;
-

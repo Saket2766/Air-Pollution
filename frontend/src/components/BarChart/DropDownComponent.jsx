@@ -61,7 +61,12 @@ const DropDownComponent = ({ data }) => {
     }
   };
   let allData = [];
-  if (selectedCity && selectedState && selectedElement && selectedNewEle != "AQI") {
+  if (
+    selectedCity &&
+    selectedState &&
+    selectedElement &&
+    selectedNewEle != "AQI"
+  ) {
     for (let i = 2013; i < 2022; i++) {
       let ele = selectedElement;
       if (
@@ -76,8 +81,12 @@ const DropDownComponent = ({ data }) => {
       }
     }
     console.log(allData);
-  }
-  else if(selectedCity && selectedElement && selectedElement && selectedNewEle=="AQI"){
+  } else if (
+    selectedCity &&
+    selectedElement &&
+    selectedElement &&
+    selectedNewEle == "AQI"
+  ) {
     let reqpm10 = 150;
     let reqpm2 = 60;
     let reqso2 = 50;
@@ -89,27 +98,25 @@ const DropDownComponent = ({ data }) => {
         data[i][selectedState] &&
         data[i][selectedState][selectedCity]
       ) {
-        if(ele=="pm10")
-        allData.push({
-          year: i,
-          data: ((data[i][selectedState][selectedCity][ele])/reqpm10)*100,
-        });
-        else if(ele=="pm2.5"){
+        if (ele == "pm10")
           allData.push({
             year: i,
-            data: ((data[i][selectedState][selectedCity][ele])/reqpm2)*100,
+            data: (data[i][selectedState][selectedCity][ele] / reqpm10) * 100,
           });
-        }
-        else if(ele=="So2"){
+        else if (ele == "pm2.5") {
           allData.push({
             year: i,
-            data: ((data[i][selectedState][selectedCity][ele])/reqso2)*100,
+            data: (data[i][selectedState][selectedCity][ele] / reqpm2) * 100,
           });
-        }
-        else if(ele=="No2"){
+        } else if (ele == "So2") {
           allData.push({
             year: i,
-            data: ((data[i][selectedState][selectedCity][ele])/reqno2)*100,
+            data: (data[i][selectedState][selectedCity][ele] / reqso2) * 100,
+          });
+        } else if (ele == "No2") {
+          allData.push({
+            year: i,
+            data: (data[i][selectedState][selectedCity][ele] / reqno2) * 100,
           });
         }
       }
@@ -118,58 +125,62 @@ const DropDownComponent = ({ data }) => {
   }
 
   return (
-    <div className="chartComp">
-      <div>
-        <h1>Year Wise Comparison</h1>
-        <label>Select State:</label>
-        <br></br>
-        <select
-          value={selectedState}
-          onChange={handleStateChange}
-          className="State"
-          // placeholder="selecdsfs"
-        >
-          <option value="">Select...</option>
-          {states.map((state) => (
-            <option key={state} value={state}>
-              {state}
-            </option>
-          ))}
-        </select>
-        <br></br>
+    <div className="container">
+      <div className="heading">Year Wise Comparison</div>
+      <div className="chartComp">
+        <div className="form">
+          <label className="sel">Select State:</label>
+          <br></br>
+          <select
+            value={selectedState}
+            onChange={handleStateChange}
+            className="State"
+            // placeholder="selecdsfs"
+          >
+            <option value="">Select...</option>
+            {states.map((state) => (
+              <option key={state} value={state}>
+                {state}
+              </option>
+            ))}
+          </select>
+          <br></br>
 
-        <label>Select City:</label>
-        <br></br>
-        <select
-          value={selectedCity}
-          onChange={handleCityChange}
-          className="City"
-        >
-          <option value="">Select...</option>
-          {cities.map((city) => (
-            <option key={city} value={city}>
-              {city}
-            </option>
-          ))}
-        </select>
-        <br></br>
+          <label className="sel">Select City:</label>
+          <br></br>
+          <select
+            value={selectedCity}
+            onChange={handleCityChange}
+            className="City"
+          >
+            <option value="">Select...</option>
+            {cities.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
+          <br></br>
 
-        <label>Select Element:</label>
-        <br></br>
-        <select
-          value={selectedNewEle}
-          onChange={handleElementChange}
-          className="Element"
-        >
-          <option value="">Select...</option>
-          {elements.map((element) => (
-            <option key={element} value={element}>
-              {element}
-            </option>
-          ))}
-        </select>
+          <label className="sel">Select Element:</label>
+          <br></br>
+          <select
+            value={selectedNewEle}
+            onChange={handleElementChange}
+            className="Element"
+          >
+            <option value="">Select...</option>
+            {elements.map((element) => (
+              <option key={element} value={element}>
+                {element}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="chart-container">
+          {allData != null && <StateViz data={allData} />}
+        </div>
       </div>
-      <div className="chart-container">{allData != null && <StateViz data={allData} />}</div>
     </div>
   );
 };
