@@ -80,7 +80,7 @@ const DropDownComponent = ({ data }) => {
         });
       }
     }
-    console.log(allData);
+    // console.log(allData);
   } else if (
     selectedCity &&
     selectedElement &&
