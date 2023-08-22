@@ -1,4 +1,5 @@
 .leaflet-container {
+  position: relative;
   background-color: aliceblue;
 }
 .DemographicForm {
@@ -14,10 +15,13 @@
 .DemographicChecks {
   margin: 40px;
 }
-
-
+.legend-container{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
 .DemographicMap {
-  position: relative;
   flex-grow: 1;
   margin-top: 50px;
 }

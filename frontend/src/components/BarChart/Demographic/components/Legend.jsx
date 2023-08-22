@@ -82,7 +82,7 @@ const Legend = ({element}) => {
     }
 
     return(
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+        <div className="legend-container" style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
             {
                 element ? 
                 renderLegend(element) : null
