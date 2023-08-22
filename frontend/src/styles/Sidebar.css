@@ -82,6 +82,7 @@
     height: 100vh;
     text-align: center;
     border-radius: 10px;
+    background-color: #e8c4f0;
   }
   .sidebar .sidebar-label {
     font-size: 2rem;

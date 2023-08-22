@@ -15,10 +15,16 @@ const Sidebar = ({
   showDemographic,
 }) => {
   const [active, setActive] = useState(false);
+  const [selectedItem, setSelectedItem] = useState("yearwise"); // Default to "Year Wise Comparison"
+
   const toggleHidden = () => {
     setActive(!active);
   };
 
+  const onItemClick = (item) => {
+    setSelectedItem(item);
+    toggleHidden();
+  };
   const clickYearwise = () => {
     showYearwise();
     toggleHidden();
@@ -57,19 +63,59 @@ const Sidebar = ({
           <Lightbulb />
           Visualizations
         </div>
-        <div className="sidebar-item" onClick={clickYearwise}>
+        <div
+          className={`sidebar-item ${
+            selectedItem === "yearwise" ? "selected" : ""
+          }`}
+          onClick={() => {
+            onItemClick("yearwise");
+            showYearwise();
+          }}
+        >
           Year Wise Comparison
         </div>
-        <div className="sidebar-item" onClick={clickStatewise}>
+        <div
+          className={`sidebar-item ${
+            selectedItem === "statewise" ? "selected" : ""
+          }`}
+          onClick={() => {
+            onItemClick("statewise");
+            showStatewise();
+          }}
+        >
           Statewise Comparison
         </div>
-        <div className="sidebar-item" onClick={clickCitywiseForState}>
+        <div
+          className={`sidebar-item ${
+            selectedItem === "citywiseForState" ? "selected" : ""
+          }`}
+          onClick={() => {
+            onItemClick("citywiseForState");
+            showCitywiseForState();
+          }}
+        >
           Citywise Comparison for Each State
         </div>
-        <div className="sidebar-item" onClick={clickCitywise}>
-          City wise Comparison
+        <div
+          className={`sidebar-item ${
+            selectedItem === "citywise" ? "selected" : ""
+          }`}
+          onClick={() => {
+            onItemClick("citywise");
+            showCitywise();
+          }}
+        >
+          City Wise Comparison
         </div>
-        <div className="sidebar-item" onClick={clickDemographic}>
+        <div
+          className={`sidebar-item ${
+            selectedItem === "demographic" ? "selected" : ""
+          }`}
+          onClick={() => {
+            onItemClick("demographic");
+            showDemographic();
+          }}
+        >
           Demographic Graph
         </div>
       </nav>

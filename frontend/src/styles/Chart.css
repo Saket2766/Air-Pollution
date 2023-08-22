@@ -84,8 +84,11 @@
     flex-direction: column;
     text-align: center;
   }
-  .chartComp h1, .heading{
+  .chartComp h1,
+  .heading {
     margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 5px;
     font-size: 1.5rem;
     line-height: 1.16;
     letter-spacing: -0.05rem;
@@ -96,12 +99,12 @@
   .State,
   .Element {
     display: block;
-    width: 80%;
+    width: 100%;
     margin: 5px auto;
     height: 20vw;
     font-size: 1rem;
   }
-  .chart-container{
+  .chart-container {
     width: 100vw;
   }
 }
