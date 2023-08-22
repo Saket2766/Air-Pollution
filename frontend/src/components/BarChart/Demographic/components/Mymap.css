@@ -1,16 +1,18 @@
 .leaflet-container {
-  position: relative;
-  background-color: aliceblue;
+  background-color: #eae5e5;
 }
 .DemographicForm {
   color: black;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   display: flex;
   flex-direction: row;
   font-family: "Poppins", sans-serif;
 }
 .DemographicForm h3 {
   font-size: 2rem;
+}
+.DemographicYear {
+  margin-top: 35px;
 }
 .DemographicChecks {
   margin: 40px;

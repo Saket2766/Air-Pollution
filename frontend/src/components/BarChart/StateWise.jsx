@@ -66,7 +66,12 @@ const StateWise = ({ data }) => {
   selectedYear && selectedState && elements.push("AQI");
   let alldata2 = [];
 
-  if (selectedYear && selectedElement && selectedState && selectedNewEle != "AQI") {
+  if (
+    selectedYear &&
+    selectedElement &&
+    selectedState &&
+    selectedNewEle != "AQI"
+  ) {
     selectedState.forEach((st) => {
       let sum = 0;
       let cnt = 0;
@@ -87,8 +92,12 @@ const StateWise = ({ data }) => {
         data: Math.trunc(median),
       });
     });
-  }
-  else if(selectedYear && selectedElement && selectedState && selectedNewEle == "AQI" ){
+  } else if (
+    selectedYear &&
+    selectedElement &&
+    selectedState &&
+    selectedNewEle == "AQI"
+  ) {
     let reqpm10 = 150;
     let reqpm2 = 60;
     let reqso2 = 50;
@@ -97,92 +106,91 @@ const StateWise = ({ data }) => {
       let sum = 0;
       let cnt = 0;
       let median = 0;
-    Object.keys(data[selectedYear.value][st]).forEach((city) => {
-      if (
-        data[selectedYear.value][st] &&
-        data[selectedYear.value][st][city][selectedElement]
-      )
-        sum += data[selectedYear.value][st][city][selectedElement];
-      cnt++;
-    });
+      Object.keys(data[selectedYear.value][st]).forEach((city) => {
+        if (
+          data[selectedYear.value][st] &&
+          data[selectedYear.value][st][city][selectedElement]
+        )
+          sum += data[selectedYear.value][st][city][selectedElement];
+        cnt++;
+      });
 
-    median = sum / cnt;
-    if(selectedElement == "pm2.5"){
-      alldata2.push({
-        state: st,
-        data: Math.trunc(((median)/reqpm2)*100),
-      });
-    }
-    else if(selectedElement == "pm10"){
-      alldata2.push({
-        state: st,
-        data: Math.trunc(((median)/reqpm10)*100),
-      });
-    }
-    else if(selectedElement == "So2"){
-      alldata2.push({
-        state: st,
-        data: Math.trunc(((median)/reqso2)*100),
-      });
-    }
-    else if(selectedElement == "No2"){
-      alldata2.push({
-        state: st,
-        data: Math.trunc(((median)/reqno2)*100),
-      });
-    }
+      median = sum / cnt;
+      if (selectedElement == "pm2.5") {
+        alldata2.push({
+          state: st,
+          data: Math.trunc((median / reqpm2) * 100),
+        });
+      } else if (selectedElement == "pm10") {
+        alldata2.push({
+          state: st,
+          data: Math.trunc((median / reqpm10) * 100),
+        });
+      } else if (selectedElement == "So2") {
+        alldata2.push({
+          state: st,
+          data: Math.trunc((median / reqso2) * 100),
+        });
+      } else if (selectedElement == "No2") {
+        alldata2.push({
+          state: st,
+          data: Math.trunc((median / reqno2) * 100),
+        });
+      }
     });
   }
 
-  
-
   return (
-    <div className="chartComp">
-      <div>
-        <h1>State Wise</h1>
-        <label>Select Year:</label>
-        <Select
-          options={years}
-          onChange={handleYearChange}
-          value={selectedYear}
-          className="Year"
-        />
+    <div className="container">
+      <div className="heading">State Wise</div>
+      <div className="chartComp">
+        <div className="form">
+          <label  className="sel">Select Year:</label>
+          <Select
+            options={years}
+            onChange={handleYearChange}
+            value={selectedYear}
+            className="Year"
+          />
 
-        {selectedYear && (
-          <>
-            <label>Select State:</label>
-            <Select
-              options={statesArray}
-              onChange={handleStateChange}
-              value={statesArray.filter((state) =>
-                selectedState.includes(state.value)
-              )}
-              isMulti
-              className="State"
-            />
-          </>
-        )}
+          {selectedYear && (
+            <>
+              <label className="sel">Select State:</label>
+              <Select
+                options={statesArray}
+                onChange={handleStateChange}
+                value={statesArray.filter((state) =>
+                  selectedState.includes(state.value)
+                )}
+                isMulti
+                className="State"
+              />
+            </>
+          )}
 
-        {selectedState.length > 0 && (
-          <>
-            <label>Select Element:</label>
-            <br></br>
-            <select
-              value={selectedNewEle}
-              onChange={(e) => handleElementChange({ value: e.target.value })}
-              className="Element"
-            >
-              <option value="">Select...</option>
-              {elements.map((element) => (
-                <option key={element} value={element}>
-                  {element}
-                </option>
-              ))}
-            </select>
-          </>
-        )}
+          {selectedState.length > 0 && (
+            <>
+              <label className="sel">Select Element:</label>
+              <br></br>
+              <select
+                value={selectedNewEle}
+                onChange={(e) => handleElementChange({ value: e.target.value })}
+                className="Element SelectComponent"
+              >
+                <option value="">Select...</option>
+                {elements.map((element) => (
+                  <option key={element} value={element}>
+                    {element}
+                  </option>
+                ))}
+              </select>
+            </>
+          )}
+        </div>
+        <div className="chart-container">
+          {alldata2 != null && <Viz2 data={alldata2} />}
+        </div>
       </div>
-      <div className="chart-container">{alldata2 != null && <Viz2 data={alldata2} />}</div>
     </div>
   );
 };
