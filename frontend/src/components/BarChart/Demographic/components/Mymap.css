@@ -1,6 +1,23 @@
-.leaflet-container{
-    background-color: aliceblue;
+.leaflet-container {
+  background-color: aliceblue;
 }
-.DemographicForm{
-    color: black;
+.DemographicForm {
+  color: black;
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: row;
+  font-family: "Poppins", sans-serif;
+}
+.DemographicForm h3 {
+  font-size: 2rem;
+}
+.DemographicChecks {
+  margin: 40px;
+}
+
+
+.DemographicMap {
+  position: relative;
+  flex-grow: 1;
+  margin-top: 50px;
 }
