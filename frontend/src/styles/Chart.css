@@ -18,7 +18,7 @@
   width: 100%;
   padding: 10px;
   position: relative;
-  height: 43vh;
+  height: 65vh;
   justify-content: center;
   align-items: center;
 }
@@ -78,7 +78,7 @@
     width: 100vw;
     padding: 10px;
     left: 0;
-    height: 150vh;
+    height: 120vh;
     font-size: 1rem;
     display: flex;
     flex-direction: column;
