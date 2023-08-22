@@ -1,13 +1,13 @@
 .container {
   /* display: flex; */
-  border: 2px solid;
-  border-color: black;
+  border: 3px solid;
+  border-color: #cbc3e3;
   min-height: 99%;
   height: min-content;
-  border-radius: 10px;
+  border-radius: 20px;
   margin-left: 3px;
   margin-top: 4px;
-  background-color: #eae5e5;
+  /* background-color: #eae5e5; */
   margin-bottom: 8px;
 }
 .chartComp {
@@ -47,7 +47,9 @@
   margin-bottom: 30px;
 }
 .chartComp select {
-  border: 1px solid rgb(188, 188, 188);
+  border: 1px solid;
+  /* border-color: #cbc3e3; */
+  border-color: rgb(172, 170, 170);
   background-color: white;
   color: rgb(62, 62, 62);
   height: 40px;
@@ -55,7 +57,6 @@
   font-size: 1rem;
   /* text-align: center; */
   padding-left: 10px;
-  
 }
 
 .Element_chart {
@@ -65,12 +66,12 @@
 .chart-container {
   flex-grow: 1;
 }
-.SelectComponent{
+.SelectComponent {
   background-color: transparent;
 }
 
 @media only screen and (max-width: 768px) {
-  .container{
+  .container {
     margin: 0;
   }
   .chartComp {
@@ -83,7 +84,8 @@
     flex-direction: column;
     text-align: center;
   }
-  .chartComp h1, .heading{
+  .chartComp h1,
+  .heading {
     font-size: 1.5rem;
     line-height: 1.16;
     letter-spacing: -0.05rem;

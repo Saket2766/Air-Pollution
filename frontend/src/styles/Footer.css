@@ -4,7 +4,9 @@
   margin: 0px 10px;
 }
 footer {
-  background: #b0c4b1;
+  /* background: #b0c4b1; */
+  /* background-color:blueviolet; */
+  background-color: #cbc3e3;
   color: black;
   display: flex;
   border-top: 2px solid;
