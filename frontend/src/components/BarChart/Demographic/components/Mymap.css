@@ -1,4 +1,5 @@
 .leaflet-container {
+  position: relative;
   background-color: #eae5e5;
 }
 .DemographicForm {

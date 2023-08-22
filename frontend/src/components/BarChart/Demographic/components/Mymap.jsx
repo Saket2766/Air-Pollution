@@ -219,12 +219,13 @@ function Mymap() {
           </Form>
         </div>
         <div className="DemographicMap">
-          <Legend element={selectoption.element}></Legend>
+          
           <MapContainer
             style={{ height: "100vh", width: "77%" }}
             zoom={4.5}
             center={[23, 82]}
           >
+            <Legend element={selectoption.element}></Legend>
             <GeoJSON
               ref={(layer) => setYourGeoJSONLayer(layer)}
               data={mydata.features}
