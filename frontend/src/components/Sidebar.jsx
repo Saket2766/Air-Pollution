@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/Sidebar.css";
 import { Lightbulb } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({
   // eslint-disable-next-line react/prop-types
@@ -25,29 +26,6 @@ const Sidebar = ({
     setSelectedItem(item);
     toggleHidden();
   };
-  const clickYearwise = () => {
-    showYearwise();
-    toggleHidden();
-  };
-
-  const clickStatewise = () => {
-    showStatewise();
-    toggleHidden();
-  };
-
-  const clickCitywiseForState = () => {
-    showCitywiseForState();
-    toggleHidden();
-  };
-
-  const clickCitywise = () => {
-    showCitywise();
-    toggleHidden();
-  };
-  const clickDemographic = () => {
-    showDemographic();
-    toggleHidden();
-  };
 
   return (
     <div className="sidebar-container">
@@ -58,11 +36,13 @@ const Sidebar = ({
           alt="ham"
         />
       </div>
+      <div></div>
       <nav className={`sidebar ${active ? "" : "hidden"}`}>
         <div className="sidebar-label">
           <Lightbulb />
           Visualizations
         </div>
+
         <div
           className={`sidebar-item ${
             selectedItem === "yearwise" ? "selected" : ""
@@ -118,6 +98,9 @@ const Sidebar = ({
         >
           Demographic Graph
         </div>
+        <Link to="/" className="GoHome">
+          Home
+        </Link>
       </nav>
     </div>
   );

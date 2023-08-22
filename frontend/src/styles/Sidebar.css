@@ -53,7 +53,17 @@
   border-color: #301934;
   border: 2px solid;
 }
-
+.GoHome {
+  color: rgb(152, 46, 152);
+  /* text-align: center; */
+  font-size: 2rem;
+  font-family: poppins;
+  cursor: pointer;
+  transition: all ease 0.15s;
+  /* margin: 0px 0px 25px 0px; */
+  padding: 10px 20px;
+  border: 2px solid rgb(165, 119, 165);
+}
 @media only screen and (max-width: 768px) {
   .hidden {
     display: none;
@@ -90,7 +100,7 @@
 
   .sidebar-item {
     font-size: 20px;
-    padding: 20px 60px;
+    padding: 15px 60px;
     border-bottom: 1px solid #495057;
     border-radius: 0px;
   }
