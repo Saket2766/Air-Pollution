@@ -30,7 +30,7 @@ const Charts = () => {
     setCharts(<Mymap />);
   };
   return (
-    <div style={{ display: "flex", height: "100%" }}>
+    <div style={{ display: "flex", height: "100%" ,overflowX:'hidden'}}>
       <Sidebar
         showStatewise={showStatewise}
         showYearwise={showYearwise}
