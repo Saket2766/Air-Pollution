@@ -18,7 +18,7 @@ function Mymap() {
 
   const setInputValue = (e) => {
     const { name, value } = e.target;
-
+    console.log(name)
     setSelectOption((prev) => {
       return {
         ...prev,
@@ -52,16 +52,33 @@ function Mymap() {
       layer.on({ click: handleClick });
       let showup = feature.properties.st_nm;
       const { element, year } = selectoption;
-      if (
-        element !== "" &&
-        year !== "" &&
-        Object.keys(feature.properties?.air).length &&
-        feature.properties.air[year] &&
-        feature.properties.air[year][element]
-      ) {
-        console.log("inside here");
-        const val = feature.properties.air[year][element];
-        showup = `${showup} - ${val}`;
+      if (element === "AQI") {
+        console.log("HI")
+        if (
+          element !== "" &&
+          year !== "" &&
+          Object.keys(feature.properties?.air).length &&
+          feature.properties.air[year] &&
+          feature.properties.air[year]["pm10"]
+        ) {
+          console.log("inside here");
+          const val = feature.properties.air[year]["pm10"]*(2/3);
+          showup = `${showup} - ${val}`;
+        }
+      }
+      else {
+        if (
+          element !== "" &&
+          year !== "" &&
+          Object.keys(feature.properties?.air).length &&
+          feature.properties.air[year] &&
+
+          feature.properties.air[year][element]
+        ) {
+          console.log("inside here");
+          const val = feature.properties.air[year][element];
+          showup = `${showup} - ${val}`;
+        }
       }
       layer.bindPopup(showup);
       //layer.options.fillColor = "pink";
@@ -74,6 +91,20 @@ function Mymap() {
       const state_code = feature.properties.state_code;
       const { element, year } = selectoption;
       let fillColor = "white";
+      if(element === "AQI"){
+        if (
+          element !== "" &&
+          year !== "" &&
+          feature.properties.air &&
+          feature.properties.air[year] &&
+          feature.properties.air[year]["pm10"]
+        ) {
+          console.log("inside here 222");
+          const val = feature.properties.air[year]["pm10"];
+          fillColor = colourPalatte(val, element);
+        }
+      }
+      else{
       if (
         element !== "" &&
         year !== "" &&
@@ -85,6 +116,7 @@ function Mymap() {
         const val = feature.properties.air[year][element];
         fillColor = colourPalatte(val, element);
       }
+    }
       // else if(element && year)
       // const fillColor = selectedState === state_code ? 'yellow' : 'red';
       const color = selectedState === state_code ? "gray" : "black";
@@ -148,6 +180,15 @@ function Mymap() {
                   value="pm2.5"
                   checked={selectoption.element === "pm2.5"}
                 />
+                <Form.Check
+                  type="checkbox"
+                  name="element"
+                  id="AQI"
+                  label="AQI"
+                  onChange={setInputValue}
+                  value="AQI"
+                  checked={selectoption.element === "AQI"}
+                />
               </div>
             </Form.Group>
             <Form.Group>
@@ -155,7 +196,7 @@ function Mymap() {
                 <Form.Label>
                   <label className="sel DemographicHeading">Year</label>
                 </Form.Label>
-                
+
                 <Form.Check
                   type="checkbox"
                   name="year"
@@ -233,7 +274,7 @@ function Mymap() {
           </Form>
         </div>
         <div className="DemographicMap">
-          
+
           <MapContainer
             style={{ width: "77%" }}
             zoom={4.5}

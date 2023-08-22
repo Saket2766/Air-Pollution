@@ -34,7 +34,13 @@ const Legend = ({element}) => {
         { value : 100, color : "#3E8914" },
         { value : 125, color : "#134611" },
     ]
-
+    let AQI = [
+        { value : 60, color : "#C5D1EB" },
+        { value : 120, color : "#92AFD7" },
+        { value : 180, color : "#5A7684" },
+        { value : 240, color : "#395B50" },
+        { value : 300, color : "#1F2F16" },
+    ]
 
 
     const renderLegend = (element) => {
@@ -42,7 +48,7 @@ const Legend = ({element}) => {
         if(element === "So2"){
             return So2.map((obj) => {
                 return(
-                    <div>
+                    <div key={Math.random()}>
                         <div style={{backgroundColor : obj.color, width: '50px', height: '30px'}}></div>
                         <div style={{display : 'flex' ,justifyContent: 'end'}}>{obj.value}</div>
                     </div>
@@ -52,7 +58,7 @@ const Legend = ({element}) => {
         else if(element === "No2"){
             return No2.map((obj) => {
                 return(
-                    <div>
+                    <div key={Math.random()}>
                         <div style={{backgroundColor : obj.color, width: '50px', height: '30px'}}></div>
                         <div style={{display : 'flex' ,justifyContent: 'end'}}>{obj.value}</div>
                     </div>
@@ -62,17 +68,27 @@ const Legend = ({element}) => {
         else if(element === "pm10"){
             return pm10.map((obj) => {
                 return(
-                    <div>
+                    <div key={Math.random()}>
                         <div style={{backgroundColor : obj.color, width: '50px', height: '30px'}}></div>
                         <div style={{display : 'flex' ,justifyContent: 'end'}}>{obj.value}</div>
                     </div>
                 )
             })
         }
-        else{
+        else if(element === "pm2.5"){
             return pm2.map((obj) => {
                 return(
-                    <div>
+                    <div key={Math.random()}>
+                        <div style={{backgroundColor : obj.color, width: '50px', height: '30px'}}></div>
+                        <div style={{display : 'flex' ,justifyContent: 'end'}}>{obj.value}</div>
+                    </div>
+                )
+            })
+        }
+        else if(element === "AQI"){
+            return pm10.map((obj) => {
+                return(
+                    <div key={Math.random()}>
                         <div style={{backgroundColor : obj.color, width: '50px', height: '30px'}}></div>
                         <div style={{display : 'flex' ,justifyContent: 'end'}}>{obj.value}</div>
                     </div>
