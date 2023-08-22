@@ -7,7 +7,6 @@ footer {
   background: #b0c4b1;
   color: black;
   display: flex;
-  overflow-x: hidden;
   border-top: 2px solid;
 }
 footer h3 {

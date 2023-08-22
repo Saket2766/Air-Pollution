@@ -28,3 +28,12 @@
   flex-grow: 1;
   margin-top: 50px;
 }
+
+@media only screen and (max-width:769px){
+  .DemographicForm{
+    flex-direction: column;
+  }
+  .leaflet-container{
+    margin: 0 auto;
+  }
+}

@@ -1,5 +1,5 @@
 .hamburger {
-  display: block;
+  display: none;
 }
 
 .sidebar {
@@ -19,6 +19,7 @@
   margin-left: 3px;
   margin-top: 4px;
   margin-bottom: 2px;
+  z-index: 1100;
 }
 .sidebar-label {
   color: #212529;
@@ -56,7 +57,7 @@
     width: 7vh;
     top: 1vh;
     left: 0;
-    z-index: 200;
+    z-index: 1200;
     overflow: hidden;
     cursor: pointer;
   }
@@ -67,7 +68,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 150;
+    z-index: 1100;
     margin: 0;
     width: 100vw;
     height: 100vh;

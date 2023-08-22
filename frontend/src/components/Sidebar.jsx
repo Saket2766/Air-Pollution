@@ -45,7 +45,7 @@ const Sidebar = ({
   };
 
   return (
-    <>
+    <div className="sidebar-container">
       <div className="hamburger" onClick={toggleHidden}>
         <img
           className="menu-icon"
@@ -74,7 +74,7 @@ const Sidebar = ({
           Demographic Graph
         </div>
       </nav>
-    </>
+    </div>
   );
 };
 
