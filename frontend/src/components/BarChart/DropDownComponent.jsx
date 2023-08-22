@@ -135,7 +135,6 @@ const DropDownComponent = ({ data }) => {
             value={selectedState}
             onChange={handleStateChange}
             className="State"
-            // placeholder="selecdsfs"
           >
             <option value="">Select...</option>
             {states.map((state) => (

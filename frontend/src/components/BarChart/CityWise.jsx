@@ -96,7 +96,6 @@ const StateWise = ({ data }) => {
     selectedCities.length > 0 &&
     selectedNewEle != "AQI"
   ) {
-
     selectedCities.forEach((city) => {
       if (
         data[selectedYear.value][selectedState.value][city.value] &&
@@ -114,8 +113,13 @@ const StateWise = ({ data }) => {
         });
       }
     });
-  }
-  else if(selectedYear && selectedElement && selectedState && selectedNewEle == "AQI" && selectedCities.length > 0 ){
+  } else if (
+    selectedYear &&
+    selectedElement &&
+    selectedState &&
+    selectedNewEle == "AQI" &&
+    selectedCities.length > 0
+  ) {
     let reqpm10 = 150;
     let reqpm2 = 60;
     let reqso2 = 50;
@@ -131,64 +135,62 @@ const StateWise = ({ data }) => {
           data[selectedYear.value][selectedState.value][city.value][
             selectedElement
           ];
-        if(selectedElement == "pm2.5"){
+        if (selectedElement == "pm2.5") {
           concentration = (concentration / reqpm2) * 100;
           alldata3.push({
             city: city.label,
             data: concentration,
           });
-        }
-        else if(selectedElement == "pm10"){
-          concentration = (concentration / reqpm10)*100;
+        } else if (selectedElement == "pm10") {
+          concentration = (concentration / reqpm10) * 100;
           alldata3.push({
             city: city.label,
             data: concentration,
           });
-        }   
-        else if(selectedElement == "So2"){
+        } else if (selectedElement == "So2") {
           concentration = (concentration / reqso2) * 100;
           alldata3.push({
             city: city.label,
             data: concentration,
           });
-        } 
-        else if(selectedElement == "No2"){
+        } else if (selectedElement == "No2") {
           concentration = (concentration / reqno2) * 100;
           alldata3.push({
             city: city.label,
             data: concentration,
           });
-        } 
+        }
       }
     });
   }
 
   return (
-    <div className="chartComp">
-      <div>
-        <h1>City Wise Comparison for Each State</h1>
-        <label>Select Year:</label>
-        <Select
-          options={years}
-          onChange={handleYearChange}
-          value={selectedYear}
-          className="Year"
-        />
+    <div className="container">
+      <div className="heading">City Wise Comparison for Each State</div>
+      <div className="chartComp">
+        <div className="form">
+          <label className="sel">Select Year:</label>
+          <Select
+            options={years}
+            onChange={handleYearChange}
+            value={selectedYear}
+            className="Year"
+          />
 
-        {selectedYear && (
-          <>
-            <label>Select State:</label>
-            <Select
-              options={statesArray}
-              onChange={handleStateChange}
-              value={selectedState}
-              className="State"
-            />
+          {selectedYear && (
+            <>
+              <label className="sel">Select State:</label>
+              <Select
+                options={statesArray}
+                onChange={handleStateChange}
+                value={selectedState}
+                className="State"
+              />
 
-            {selectedState && (
-              <>
-                <label>Select Element:</label>
-                {/* <Select
+              {selectedState && (
+                <>
+                  <label className="sel">Select Element:</label>
+                  {/* <Select
                   options={elements.map((element) => ({
                     value: element,
                     label: element,
@@ -197,37 +199,40 @@ const StateWise = ({ data }) => {
                   onChange={handleElementChange}
                   className="Element"
                 /> */}
-                <br></br>
-                <select
-                  value={selectedNewEle}
-                  onChange={(e) =>
-                    handleElementChange({ value: e.target.value })
-                  }
-                  className="Element"
-                >
-                  <option value="">Select</option>
-                  {elements.map((element) => (
-                    <option key={element} value={element}>
-                      {element}
-                    </option>
-                  ))}
-                </select>
-                <br></br>
+                  <br></br>
+                  <select
+                    value={selectedNewEle}
+                    onChange={(e) =>
+                      handleElementChange({ value: e.target.value })
+                    }
+                    className="Element"
+                  >
+                    <option value="">Select</option>
+                    {elements.map((element) => (
+                      <option key={element} value={element}>
+                        {element}
+                      </option>
+                    ))}
+                  </select>
+                  <br></br>
 
-                <label>Select Cities:</label>
-                <Select
-                  options={cityOptions}
-                  onChange={handleCityChange}
-                  value={selectedCities}
-                  isMulti
-                  className="City"
-                />
-              </>
-            )}
-          </>
-        )}
+                  <label  className="sel">Select Cities:</label>
+                  <Select
+                    options={cityOptions}
+                    onChange={handleCityChange}
+                    value={selectedCities}
+                    isMulti
+                    className="City"
+                  />
+                </>
+              )}
+            </>
+          )}
+        </div>
+        <div className="chart-container">
+          {alldata3 != null && <Viz3State data={alldata3} />}
+        </div>
       </div>
-      <div className="chart-container">{alldata3 != null && <Viz3State data={alldata3} />}</div>
     </div>
   );
 };

@@ -101,136 +101,138 @@ function Mymap() {
   );
 
   return (
-    <div className="DemographicForm">
-      <div className="DemographicChecks">
-        <Form>
-          <Form.Group>
-            <Form.Label>
-              <h3>Element</h3>
-            </Form.Label>
-            <div className="DemographicLabels">
-              <Form.Check
-                type="radio"
-                name="element"
-                id="So2"
-                label="So2"
-                onChange={setInputValue}
-                value={"So2"}
-              />
-              <Form.Check
-                type="radio"
-                name="element"
-                id="No2"
-                label="No2"
-                onChange={setInputValue}
-                value={"No2"}
-              />
-              <Form.Check
-                type="radio"
-                name="element"
-                id="pm10"
-                label="pm10"
-                onChange={setInputValue}
-                value={"pm10"}
-              />
-              <Form.Check
-                type="radio"
-                name="element"
-                id="pm2.5"
-                label="pm2.5"
-                onChange={setInputValue}
-                value={"pm2.5"}
-              />
-            </div>
-          </Form.Group>
-          <Form.Group>
-            <Form.Label>
-              <h3>Year</h3>
-            </Form.Label>
-            <div className="DemographicYear">
-              <Form.Check
-                type="radio"
-                name="year"
-                id="2021"
-                label="2021"
-                onChange={setInputValue}
-                value={"2021"}
-              />
-              <Form.Check
-                type="radio"
-                name="year"
-                id="2020"
-                label="2020"
-                onChange={setInputValue}
-                value={"2020"}
-              />
-              <Form.Check
-                type="radio"
-                name="year"
-                id="2018"
-                label="2018"
-                onChange={setInputValue}
-                value={"2018"}
-              />
-              <Form.Check
-                type="radio"
-                name="year"
-                id="2017"
-                label="2017"
-                onChange={setInputValue}
-                value={"2017"}
-              />
-              <Form.Check
-                type="radio"
-                name="year"
-                id="2016"
-                label="2016"
-                onChange={setInputValue}
-                value={"2016"}
-              />
-              <Form.Check
-                type="radio"
-                name="year"
-                id="2015"
-                label="2015"
-                onChange={setInputValue}
-                value={"2015"}
-              />
-              <Form.Check
-                type="radio"
-                name="year"
-                id="2014"
-                label="2014"
-                onChange={setInputValue}
-                value={"2014"}
-              />
-              <Form.Check
-                type="radio"
-                name="year"
-                id="2013"
-                label="2013"
-                onChange={setInputValue}
-                value={"2013"}
-              />
-            </div>
-          </Form.Group>
-        </Form>
-      </div>
-      <div className="DemographicMap">
-        <Legend element={selectoption.element}></Legend>
-        <MapContainer
-          style={{ height: "100vh", width: "77%" }}
-          zoom={4.5}
-          center={[23, 82]}
-          
-        >
-          <GeoJSON
-            ref={(layer) => setYourGeoJSONLayer(layer)}
-            data={mydata.features}
-            onEachFeature={oneachstate}
-            style={mystyle}
-          ></GeoJSON>
-        </MapContainer>
+    <div className="container">
+      <div className="heading">Demographic Graph</div>
+      <div className="DemographicForm">
+        <div className="DemographicChecks">
+          <Form>
+            <Form.Group>
+              <div className="DemographicLabels">
+              <Form.Label>
+                <label className="sel">Element</label>
+              </Form.Label>
+                <Form.Check
+                  type="radio"
+                  name="element"
+                  id="So2"s
+                  label="So2"
+                  onChange={setInputValue}
+                  value={"So2"}
+                />
+                <Form.Check
+                  type="radio"
+                  name="element"
+                  id="No2"
+                  label="No2"
+                  onChange={setInputValue}
+                  value={"No2"}
+                />
+                <Form.Check
+                  type="radio"
+                  name="element"
+                  id="pm10"
+                  label="pm10"
+                  onChange={setInputValue}
+                  value={"pm10"}
+                />
+                <Form.Check
+                  type="radio"
+                  name="element"
+                  id="pm2.5"
+                  label="pm2.5"
+                  onChange={setInputValue}
+                  value={"pm2.5"}
+                />
+              </div>
+            </Form.Group>
+            <Form.Group>
+              <div className="DemographicYear">
+              <Form.Label>
+                <label className="sel ">Year</label>
+              </Form.Label>
+                <Form.Check
+                  type="radio"
+                  name="year"
+                  id="2021"
+                  label="2021"
+                  onChange={setInputValue}
+                  value={"2021"}
+                />
+                <Form.Check
+                  type="radio"
+                  name="year"
+                  id="2020"
+                  label="2020"
+                  onChange={setInputValue}
+                  value={"2020"}
+                />
+                <Form.Check
+                  type="radio"
+                  name="year"
+                  id="2018"
+                  label="2018"
+                  onChange={setInputValue}
+                  value={"2018"}
+                />
+                <Form.Check
+                  type="radio"
+                  name="year"
+                  id="2017"
+                  label="2017"
+                  onChange={setInputValue}
+                  value={"2017"}
+                />
+                <Form.Check
+                  type="radio"
+                  name="year"
+                  id="2016"
+                  label="2016"
+                  onChange={setInputValue}
+                  value={"2016"}
+                />
+                <Form.Check
+                  type="radio"
+                  name="year"
+                  id="2015"
+                  label="2015"
+                  onChange={setInputValue}
+                  value={"2015"}
+                />
+                <Form.Check
+                  type="radio"
+                  name="year"
+                  id="2014"
+                  label="2014"
+                  onChange={setInputValue}
+                  value={"2014"}
+                />
+                <Form.Check
+                  type="radio"
+                  name="year"
+                  id="2013"
+                  label="2013"
+                  onChange={setInputValue}
+                  value={"2013"}
+                />
+              </div>
+            </Form.Group>
+          </Form>
+        </div>
+        <div className="DemographicMap">
+          <Legend element={selectoption.element}></Legend>
+          <MapContainer
+            style={{ height: "100vh", width: "77%" }}
+            zoom={4.5}
+            center={[23, 82]}
+          >
+            <GeoJSON
+              ref={(layer) => setYourGeoJSONLayer(layer)}
+              data={mydata.features}
+              onEachFeature={oneachstate}
+              style={mystyle}
+            ></GeoJSON>
+          </MapContainer>
+        </div>
       </div>
     </div>
   );

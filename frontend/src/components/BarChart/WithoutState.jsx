@@ -71,8 +71,13 @@ const WithoutState = ({ data }) => {
   }
 
   let selectedData = [];
-  if (selectedYear && selectedElement && selectedCities.length > 0 && selectedNewEle != "AQI") {
-    console.log("From first")
+  if (
+    selectedYear &&
+    selectedElement &&
+    selectedCities.length > 0 &&
+    selectedNewEle != "AQI"
+  ) {
+    console.log("From first");
     selectedCities.forEach((city) => {
       const stateKeys = Object.keys(data[selectedYear.value]);
       for (let i = 0; i < stateKeys.length; i++) {
@@ -90,8 +95,12 @@ const WithoutState = ({ data }) => {
         }
       }
     });
-  }
-  else if(selectedYear && selectedElement && selectedNewEle == "AQI" && selectedCities.length > 0){
+  } else if (
+    selectedYear &&
+    selectedElement &&
+    selectedNewEle == "AQI" &&
+    selectedCities.length > 0
+  ) {
     const reqpm10 = 150;
     const reqpm2 = 60;
     const reqso2 = 50;
@@ -105,29 +114,26 @@ const WithoutState = ({ data }) => {
           let concentration =
             data[selectedYear.value][state][city.value][selectedElement];
           if (concentration) {
-            if(ele == "pm2.5"){
-              concentration = (concentration / reqpm2)*100;
+            if (ele == "pm2.5") {
+              concentration = (concentration / reqpm2) * 100;
               selectedData.push({
                 city: city.label,
                 data: concentration,
               });
-            }
-            else if(ele == "pm10"){
-              concentration = (concentration / reqpm10)*100;
+            } else if (ele == "pm10") {
+              concentration = (concentration / reqpm10) * 100;
               selectedData.push({
                 city: city.label,
                 data: concentration,
               });
               // console.log(data)
-            }
-            else if(selectedElement == "So2"){
+            } else if (selectedElement == "So2") {
               concentration = (concentration / reqso2) * 100;
               selectedData.push({
                 city: city.label,
                 data: concentration,
               });
-            }
-            else if(selectedElement == "No2"){
+            } else if (selectedElement == "No2") {
               concentration = (concentration / reqno2) * 100;
               selectedData.push({
                 city: city.label,
@@ -139,55 +145,57 @@ const WithoutState = ({ data }) => {
         }
       }
     });
-    
   }
   // console.log(selectedData)
 
   return (
-    <div className="chartComp">
-      <div>
-        <h1>City Wise Comparison for all Cities</h1>
-        <label>Select Year:</label>
-        <Select
-          options={years}
-          onChange={handleYearChange}
-          value={selectedYear}
-          className="Year"
-        />
+    <div className="container">
+      <div className="heading">City Wise Comparison for all Cities</div>
+      <div className="chartComp">
+        <div className="form">
+          <label className="sel">Select Year:</label>
+          <Select
+            options={years}
+            onChange={handleYearChange}
+            value={selectedYear}
+            className="Year"
+          />
+          {selectedYear && (
+            <>
+              <label className="sel">Select Element:</label>
+              <br></br>
+              <select
+                value={selectedNewEle}
+                onChange={(e) => handleElementChange({ value: e.target.value })}
+                className="Element"
+              >
+                <option value="">Select</option>
+                {elements.map((element) => (
+                  <option key={element} value={element}>
+                    {element}
+                  </option>
+                ))}
+              </select>
+              <br></br>
 
-        {selectedYear && (
-          <>
-            <label>Select Element:</label>
-            <br></br>
-            <select
-              value={selectedNewEle}
-              onChange={(e) => handleElementChange({ value: e.target.value })}
-              className="Element"
-            >
-              <option value="">Select</option>
-              {elements.map((element) => (
-                <option key={element} value={element}>
-                  {element}
-                </option>
-              ))}
-            </select>
-            <br></br>
-
-            <label>Select Cities:</label>
-            <Select
-              options={cityOptions}
-              onChange={handleCityChange}
-              value={selectedCities}
-              isMulti
-              className="City"
-            />
-          </>
-        )}
-      </div>
-      <div>
-        {selectedCities.length > 0 && selectedElement && (
-          <div className="chart-container">{selectedData != null && <Viz3 data={selectedData} />}</div>
-        )}
+              <label className="sel">Select Cities:</label>
+              <Select
+                options={cityOptions}
+                onChange={handleCityChange}
+                value={selectedCities}
+                isMulti
+                className="City"
+              />
+            </>
+          )}
+        </div>
+        <div>
+          {selectedCities.length > 0 && selectedElement && (
+            <div className="chart-container">
+              {selectedData != null && <Viz3 data={selectedData} />}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
