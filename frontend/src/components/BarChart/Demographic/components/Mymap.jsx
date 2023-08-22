@@ -18,10 +18,11 @@ function Mymap() {
 
   const setInputValue = (e) => {
     const { name, value } = e.target;
+
     setSelectOption((prev) => {
       return {
         ...prev,
-        [name]: value,
+        [name]: prev[name] === value ? "" : value,
       };
     });
   };
@@ -108,111 +109,124 @@ function Mymap() {
           <Form>
             <Form.Group>
               <div className="DemographicLabels">
-              <Form.Label>
-                <label className="sel">Element</label>
-              </Form.Label>
+                <Form.Label>
+                  <label className="sel DemographicHeading">Element</label>
+                </Form.Label>
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="element"
-                  id="So2"s
+                  id="So2"
                   label="So2"
                   onChange={setInputValue}
-                  value={"So2"}
+                  value="So2"
+                  checked={selectoption.element === "So2"}
                 />
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="element"
                   id="No2"
                   label="No2"
                   onChange={setInputValue}
-                  value={"No2"}
+                  value="No2"
+                  checked={selectoption.element === "No2"}
                 />
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="element"
                   id="pm10"
                   label="pm10"
                   onChange={setInputValue}
-                  value={"pm10"}
+                  value="pm10"
+                  checked={selectoption.element === "pm10"}
                 />
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="element"
                   id="pm2.5"
                   label="pm2.5"
                   onChange={setInputValue}
-                  value={"pm2.5"}
+                  value="pm2.5"
+                  checked={selectoption.element === "pm2.5"}
                 />
               </div>
             </Form.Group>
             <Form.Group>
               <div className="DemographicYear">
-              <Form.Label>
-                <label className="sel ">Year</label>
-              </Form.Label>
+                <Form.Label>
+                  <label className="sel DemographicHeading">Year</label>
+                </Form.Label>
+                
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="year"
                   id="2021"
                   label="2021"
                   onChange={setInputValue}
-                  value={"2021"}
+                  value="2021"
+                  checked={selectoption.year === "2021"}
                 />
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="year"
                   id="2020"
                   label="2020"
                   onChange={setInputValue}
-                  value={"2020"}
+                  value="2020"
+                  checked={selectoption.year === "2020"}
                 />
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="year"
                   id="2018"
                   label="2018"
                   onChange={setInputValue}
-                  value={"2018"}
+                  value="2018"
+                  checked={selectoption.year === "2018"}
                 />
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="year"
                   id="2017"
                   label="2017"
                   onChange={setInputValue}
-                  value={"2017"}
+                  value="2017"
+                  checked={selectoption.year === "2017"}
                 />
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="year"
                   id="2016"
                   label="2016"
                   onChange={setInputValue}
-                  value={"2016"}
+                  value="2016"
+                  checked={selectoption.year === "2016"}
                 />
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="year"
                   id="2015"
                   label="2015"
                   onChange={setInputValue}
-                  value={"2015"}
+                  value="2015"
+                  checked={selectoption.year === "2015"}
                 />
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="year"
                   id="2014"
                   label="2014"
                   onChange={setInputValue}
-                  value={"2014"}
+                  value="2014"
+                  checked={selectoption.year === "2014"}
                 />
                 <Form.Check
-                  type="radio"
+                  type="checkbox"
                   name="year"
                   id="2013"
                   label="2013"
                   onChange={setInputValue}
-                  value={"2013"}
+                  value="2013"
+                  checked={selectoption.year === "2013"}
                 />
               </div>
             </Form.Group>

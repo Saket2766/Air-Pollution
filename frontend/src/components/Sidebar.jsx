@@ -15,7 +15,6 @@ const Sidebar = ({
   showDemographic,
 }) => {
   const [active, setActive] = useState(false);
-
   const toggleHidden = () => {
     setActive(!active);
   };

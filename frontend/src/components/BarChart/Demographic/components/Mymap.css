@@ -1,19 +1,17 @@
 .leaflet-container {
   position: relative;
-  background-color: #eae5e5;
+  background-color: white;
   height: 100vh;
   margin-bottom: 20px;
 }
 .DemographicForm {
   color: black;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   display: flex;
   flex-direction: row;
   font-family: "Poppins", sans-serif;
 }
-.DemographicForm h3 {
-  font-size: 2rem;
-}
+
 .DemographicYear {
   margin-top: 35px;
 }
@@ -26,6 +24,11 @@
   right: 0;
   z-index: 1000;
 }
+.DemographicHeading {
+  font-size: 1.7rem;
+  letter-spacing: 1.1px;
+}
+
 .DemographicMap {
   flex-grow: 1;
   margin-top: 50px;
