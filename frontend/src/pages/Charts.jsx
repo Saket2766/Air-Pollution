@@ -6,7 +6,7 @@ import * as data from "../data/data.json";
 import StateWise from "../components/BarChart/StateWise";
 import CityWise from "../components/BarChart/CityWise";
 import WithoutState from "../components/BarChart/WithoutState";
-
+import Mymap from "../components/BarChart/Demographic/components/Mymap";
 // import "../styles/Charts.css";
 
 const Charts = () => {
@@ -26,6 +26,9 @@ const Charts = () => {
   const showCitywise = () => {
     setCharts(<WithoutState data={data.default} />);
   };
+  const showDemographic = () => {
+    setCharts(<Mymap />);
+  };
   return (
     <div style={{ display: "flex", height: "100%" }}>
       <Sidebar
@@ -33,6 +36,7 @@ const Charts = () => {
         showYearwise={showYearwise}
         showCitywiseForState={showCitywiseForState}
         showCitywise={showCitywise}
+        showDemographic={showDemographic}
       />
       <AllCharts charts={charts} />
     </div>

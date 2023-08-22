@@ -11,6 +11,8 @@ const Sidebar = ({
   showCitywiseForState,
   // eslint-disable-next-line react/prop-types
   showCitywise,
+  // eslint-disable-next-line react/prop-types
+  showDemographic,
 }) => {
   const [active, setActive] = useState(false);
 
@@ -35,6 +37,10 @@ const Sidebar = ({
 
   const clickCitywise = () => {
     showCitywise();
+    toggleHidden();
+  };
+  const clickDemographic = () => {
+    showDemographic();
     toggleHidden();
   };
 
@@ -63,6 +69,9 @@ const Sidebar = ({
         </div>
         <div className="sidebar-item" onClick={clickCitywise}>
           City wise Comparison
+        </div>
+        <div className="sidebar-item" onClick={clickDemographic}>
+          Demographic Graph
         </div>
       </nav>
     </>
