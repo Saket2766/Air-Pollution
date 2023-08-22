@@ -221,7 +221,7 @@ function Mymap() {
         <div className="DemographicMap">
           
           <MapContainer
-            style={{ height: "100vh", width: "77%" }}
+            style={{ width: "77%" }}
             zoom={4.5}
             center={[23, 82]}
           >

@@ -2,12 +2,13 @@
   /* display: flex; */
   border: 2px solid;
   border-color: black;
-  height: 99%;
+  min-height: 99%;
+  height: min-content;
   border-radius: 10px;
   margin-left: 3px;
   margin-top: 4px;
   background-color: #eae5e5;
-  /* margin-bottom: 8px; */
+  margin-bottom: 8px;
 }
 .chartComp {
   color: black;
