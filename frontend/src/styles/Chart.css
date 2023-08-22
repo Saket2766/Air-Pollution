@@ -79,6 +79,8 @@
   }
   .chartComp h1, .heading{
     font-size: 1.5rem;
+    line-height: 1.16;
+    letter-spacing: -0.05rem;
   }
 
   .Year,
